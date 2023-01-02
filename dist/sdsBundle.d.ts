@@ -831,6 +831,198 @@ export namespace stratos {
             }
         }
     }
+
+    /** Namespace crypto. */
+    namespace crypto {
+
+        /** Namespace v1. */
+        namespace v1 {
+
+            /** Namespace ethsecp256k1. */
+            namespace ethsecp256k1 {
+
+                /** Properties of a PubKey. */
+                interface IPubKey {
+
+                    /** PubKey key */
+                    key?: (Uint8Array|null);
+                }
+
+                /** Represents a PubKey. */
+                class PubKey implements IPubKey {
+
+                    /**
+                     * Constructs a new PubKey.
+                     * @param [properties] Properties to set
+                     */
+                    constructor(properties?: stratos.crypto.v1.ethsecp256k1.IPubKey);
+
+                    /** PubKey key. */
+                    public key: Uint8Array;
+
+                    /**
+                     * Creates a new PubKey instance using the specified properties.
+                     * @param [properties] Properties to set
+                     * @returns PubKey instance
+                     */
+                    public static create(properties?: stratos.crypto.v1.ethsecp256k1.IPubKey): stratos.crypto.v1.ethsecp256k1.PubKey;
+
+                    /**
+                     * Encodes the specified PubKey message. Does not implicitly {@link stratos.crypto.v1.ethsecp256k1.PubKey.verify|verify} messages.
+                     * @param message PubKey message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encode(message: stratos.crypto.v1.ethsecp256k1.IPubKey, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Encodes the specified PubKey message, length delimited. Does not implicitly {@link stratos.crypto.v1.ethsecp256k1.PubKey.verify|verify} messages.
+                     * @param message PubKey message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encodeDelimited(message: stratos.crypto.v1.ethsecp256k1.IPubKey, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Decodes a PubKey message from the specified reader or buffer.
+                     * @param reader Reader or buffer to decode from
+                     * @param [length] Message length if known beforehand
+                     * @returns PubKey
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): stratos.crypto.v1.ethsecp256k1.PubKey;
+
+                    /**
+                     * Decodes a PubKey message from the specified reader or buffer, length delimited.
+                     * @param reader Reader or buffer to decode from
+                     * @returns PubKey
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): stratos.crypto.v1.ethsecp256k1.PubKey;
+
+                    /**
+                     * Verifies a PubKey message.
+                     * @param message Plain object to verify
+                     * @returns `null` if valid, otherwise the reason why it is not
+                     */
+                    public static verify(message: { [k: string]: any }): (string|null);
+
+                    /**
+                     * Creates a PubKey message from a plain object. Also converts values to their respective internal types.
+                     * @param object Plain object
+                     * @returns PubKey
+                     */
+                    public static fromObject(object: { [k: string]: any }): stratos.crypto.v1.ethsecp256k1.PubKey;
+
+                    /**
+                     * Creates a plain object from a PubKey message. Also converts values to other types if specified.
+                     * @param message PubKey
+                     * @param [options] Conversion options
+                     * @returns Plain object
+                     */
+                    public static toObject(message: stratos.crypto.v1.ethsecp256k1.PubKey, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                    /**
+                     * Converts this PubKey to JSON.
+                     * @returns JSON object
+                     */
+                    public toJSON(): { [k: string]: any };
+                }
+
+                /** Properties of a PrivKey. */
+                interface IPrivKey {
+
+                    /** PrivKey key */
+                    key?: (Uint8Array|null);
+                }
+
+                /** Represents a PrivKey. */
+                class PrivKey implements IPrivKey {
+
+                    /**
+                     * Constructs a new PrivKey.
+                     * @param [properties] Properties to set
+                     */
+                    constructor(properties?: stratos.crypto.v1.ethsecp256k1.IPrivKey);
+
+                    /** PrivKey key. */
+                    public key: Uint8Array;
+
+                    /**
+                     * Creates a new PrivKey instance using the specified properties.
+                     * @param [properties] Properties to set
+                     * @returns PrivKey instance
+                     */
+                    public static create(properties?: stratos.crypto.v1.ethsecp256k1.IPrivKey): stratos.crypto.v1.ethsecp256k1.PrivKey;
+
+                    /**
+                     * Encodes the specified PrivKey message. Does not implicitly {@link stratos.crypto.v1.ethsecp256k1.PrivKey.verify|verify} messages.
+                     * @param message PrivKey message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encode(message: stratos.crypto.v1.ethsecp256k1.IPrivKey, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Encodes the specified PrivKey message, length delimited. Does not implicitly {@link stratos.crypto.v1.ethsecp256k1.PrivKey.verify|verify} messages.
+                     * @param message PrivKey message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encodeDelimited(message: stratos.crypto.v1.ethsecp256k1.IPrivKey, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Decodes a PrivKey message from the specified reader or buffer.
+                     * @param reader Reader or buffer to decode from
+                     * @param [length] Message length if known beforehand
+                     * @returns PrivKey
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): stratos.crypto.v1.ethsecp256k1.PrivKey;
+
+                    /**
+                     * Decodes a PrivKey message from the specified reader or buffer, length delimited.
+                     * @param reader Reader or buffer to decode from
+                     * @returns PrivKey
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): stratos.crypto.v1.ethsecp256k1.PrivKey;
+
+                    /**
+                     * Verifies a PrivKey message.
+                     * @param message Plain object to verify
+                     * @returns `null` if valid, otherwise the reason why it is not
+                     */
+                    public static verify(message: { [k: string]: any }): (string|null);
+
+                    /**
+                     * Creates a PrivKey message from a plain object. Also converts values to their respective internal types.
+                     * @param object Plain object
+                     * @returns PrivKey
+                     */
+                    public static fromObject(object: { [k: string]: any }): stratos.crypto.v1.ethsecp256k1.PrivKey;
+
+                    /**
+                     * Creates a plain object from a PrivKey message. Also converts values to other types if specified.
+                     * @param message PrivKey
+                     * @param [options] Conversion options
+                     * @returns Plain object
+                     */
+                    public static toObject(message: stratos.crypto.v1.ethsecp256k1.PrivKey, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                    /**
+                     * Converts this PrivKey to JSON.
+                     * @returns JSON object
+                     */
+                    public toJSON(): { [k: string]: any };
+                }
+            }
+        }
+    }
 }
 
 /** Namespace google. */
