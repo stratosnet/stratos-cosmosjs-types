@@ -1818,6 +1818,434 @@ $root.stratos = (function() {
         return sds;
     })();
 
+    stratos.crypto = (function() {
+
+        /**
+         * Namespace crypto.
+         * @memberof stratos
+         * @namespace
+         */
+        var crypto = {};
+
+        crypto.v1 = (function() {
+
+            /**
+             * Namespace v1.
+             * @memberof stratos.crypto
+             * @namespace
+             */
+            var v1 = {};
+
+            v1.ethsecp256k1 = (function() {
+
+                /**
+                 * Namespace ethsecp256k1.
+                 * @memberof stratos.crypto.v1
+                 * @namespace
+                 */
+                var ethsecp256k1 = {};
+
+                ethsecp256k1.PubKey = (function() {
+
+                    /**
+                     * Properties of a PubKey.
+                     * @memberof stratos.crypto.v1.ethsecp256k1
+                     * @interface IPubKey
+                     * @property {Uint8Array|null} [key] PubKey key
+                     */
+
+                    /**
+                     * Constructs a new PubKey.
+                     * @memberof stratos.crypto.v1.ethsecp256k1
+                     * @classdesc Represents a PubKey.
+                     * @implements IPubKey
+                     * @constructor
+                     * @param {stratos.crypto.v1.ethsecp256k1.IPubKey=} [properties] Properties to set
+                     */
+                    function PubKey(properties) {
+                        if (properties)
+                            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                                if (properties[keys[i]] != null)
+                                    this[keys[i]] = properties[keys[i]];
+                    }
+
+                    /**
+                     * PubKey key.
+                     * @member {Uint8Array} key
+                     * @memberof stratos.crypto.v1.ethsecp256k1.PubKey
+                     * @instance
+                     */
+                    PubKey.prototype.key = $util.newBuffer([]);
+
+                    /**
+                     * Creates a new PubKey instance using the specified properties.
+                     * @function create
+                     * @memberof stratos.crypto.v1.ethsecp256k1.PubKey
+                     * @static
+                     * @param {stratos.crypto.v1.ethsecp256k1.IPubKey=} [properties] Properties to set
+                     * @returns {stratos.crypto.v1.ethsecp256k1.PubKey} PubKey instance
+                     */
+                    PubKey.create = function create(properties) {
+                        return new PubKey(properties);
+                    };
+
+                    /**
+                     * Encodes the specified PubKey message. Does not implicitly {@link stratos.crypto.v1.ethsecp256k1.PubKey.verify|verify} messages.
+                     * @function encode
+                     * @memberof stratos.crypto.v1.ethsecp256k1.PubKey
+                     * @static
+                     * @param {stratos.crypto.v1.ethsecp256k1.IPubKey} message PubKey message or plain object to encode
+                     * @param {$protobuf.Writer} [writer] Writer to encode to
+                     * @returns {$protobuf.Writer} Writer
+                     */
+                    PubKey.encode = function encode(message, writer) {
+                        if (!writer)
+                            writer = $Writer.create();
+                        if (message.key != null && Object.hasOwnProperty.call(message, "key"))
+                            writer.uint32(/* id 1, wireType 2 =*/10).bytes(message.key);
+                        return writer;
+                    };
+
+                    /**
+                     * Encodes the specified PubKey message, length delimited. Does not implicitly {@link stratos.crypto.v1.ethsecp256k1.PubKey.verify|verify} messages.
+                     * @function encodeDelimited
+                     * @memberof stratos.crypto.v1.ethsecp256k1.PubKey
+                     * @static
+                     * @param {stratos.crypto.v1.ethsecp256k1.IPubKey} message PubKey message or plain object to encode
+                     * @param {$protobuf.Writer} [writer] Writer to encode to
+                     * @returns {$protobuf.Writer} Writer
+                     */
+                    PubKey.encodeDelimited = function encodeDelimited(message, writer) {
+                        return this.encode(message, writer).ldelim();
+                    };
+
+                    /**
+                     * Decodes a PubKey message from the specified reader or buffer.
+                     * @function decode
+                     * @memberof stratos.crypto.v1.ethsecp256k1.PubKey
+                     * @static
+                     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                     * @param {number} [length] Message length if known beforehand
+                     * @returns {stratos.crypto.v1.ethsecp256k1.PubKey} PubKey
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    PubKey.decode = function decode(reader, length) {
+                        if (!(reader instanceof $Reader))
+                            reader = $Reader.create(reader);
+                        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.stratos.crypto.v1.ethsecp256k1.PubKey();
+                        while (reader.pos < end) {
+                            var tag = reader.uint32();
+                            switch (tag >>> 3) {
+                            case 1:
+                                message.key = reader.bytes();
+                                break;
+                            default:
+                                reader.skipType(tag & 7);
+                                break;
+                            }
+                        }
+                        return message;
+                    };
+
+                    /**
+                     * Decodes a PubKey message from the specified reader or buffer, length delimited.
+                     * @function decodeDelimited
+                     * @memberof stratos.crypto.v1.ethsecp256k1.PubKey
+                     * @static
+                     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                     * @returns {stratos.crypto.v1.ethsecp256k1.PubKey} PubKey
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    PubKey.decodeDelimited = function decodeDelimited(reader) {
+                        if (!(reader instanceof $Reader))
+                            reader = new $Reader(reader);
+                        return this.decode(reader, reader.uint32());
+                    };
+
+                    /**
+                     * Verifies a PubKey message.
+                     * @function verify
+                     * @memberof stratos.crypto.v1.ethsecp256k1.PubKey
+                     * @static
+                     * @param {Object.<string,*>} message Plain object to verify
+                     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                     */
+                    PubKey.verify = function verify(message) {
+                        if (typeof message !== "object" || message === null)
+                            return "object expected";
+                        if (message.key != null && message.hasOwnProperty("key"))
+                            if (!(message.key && typeof message.key.length === "number" || $util.isString(message.key)))
+                                return "key: buffer expected";
+                        return null;
+                    };
+
+                    /**
+                     * Creates a PubKey message from a plain object. Also converts values to their respective internal types.
+                     * @function fromObject
+                     * @memberof stratos.crypto.v1.ethsecp256k1.PubKey
+                     * @static
+                     * @param {Object.<string,*>} object Plain object
+                     * @returns {stratos.crypto.v1.ethsecp256k1.PubKey} PubKey
+                     */
+                    PubKey.fromObject = function fromObject(object) {
+                        if (object instanceof $root.stratos.crypto.v1.ethsecp256k1.PubKey)
+                            return object;
+                        var message = new $root.stratos.crypto.v1.ethsecp256k1.PubKey();
+                        if (object.key != null)
+                            if (typeof object.key === "string")
+                                $util.base64.decode(object.key, message.key = $util.newBuffer($util.base64.length(object.key)), 0);
+                            else if (object.key.length)
+                                message.key = object.key;
+                        return message;
+                    };
+
+                    /**
+                     * Creates a plain object from a PubKey message. Also converts values to other types if specified.
+                     * @function toObject
+                     * @memberof stratos.crypto.v1.ethsecp256k1.PubKey
+                     * @static
+                     * @param {stratos.crypto.v1.ethsecp256k1.PubKey} message PubKey
+                     * @param {$protobuf.IConversionOptions} [options] Conversion options
+                     * @returns {Object.<string,*>} Plain object
+                     */
+                    PubKey.toObject = function toObject(message, options) {
+                        if (!options)
+                            options = {};
+                        var object = {};
+                        if (options.defaults)
+                            if (options.bytes === String)
+                                object.key = "";
+                            else {
+                                object.key = [];
+                                if (options.bytes !== Array)
+                                    object.key = $util.newBuffer(object.key);
+                            }
+                        if (message.key != null && message.hasOwnProperty("key"))
+                            object.key = options.bytes === String ? $util.base64.encode(message.key, 0, message.key.length) : options.bytes === Array ? Array.prototype.slice.call(message.key) : message.key;
+                        return object;
+                    };
+
+                    /**
+                     * Converts this PubKey to JSON.
+                     * @function toJSON
+                     * @memberof stratos.crypto.v1.ethsecp256k1.PubKey
+                     * @instance
+                     * @returns {Object.<string,*>} JSON object
+                     */
+                    PubKey.prototype.toJSON = function toJSON() {
+                        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                    };
+
+                    return PubKey;
+                })();
+
+                ethsecp256k1.PrivKey = (function() {
+
+                    /**
+                     * Properties of a PrivKey.
+                     * @memberof stratos.crypto.v1.ethsecp256k1
+                     * @interface IPrivKey
+                     * @property {Uint8Array|null} [key] PrivKey key
+                     */
+
+                    /**
+                     * Constructs a new PrivKey.
+                     * @memberof stratos.crypto.v1.ethsecp256k1
+                     * @classdesc Represents a PrivKey.
+                     * @implements IPrivKey
+                     * @constructor
+                     * @param {stratos.crypto.v1.ethsecp256k1.IPrivKey=} [properties] Properties to set
+                     */
+                    function PrivKey(properties) {
+                        if (properties)
+                            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                                if (properties[keys[i]] != null)
+                                    this[keys[i]] = properties[keys[i]];
+                    }
+
+                    /**
+                     * PrivKey key.
+                     * @member {Uint8Array} key
+                     * @memberof stratos.crypto.v1.ethsecp256k1.PrivKey
+                     * @instance
+                     */
+                    PrivKey.prototype.key = $util.newBuffer([]);
+
+                    /**
+                     * Creates a new PrivKey instance using the specified properties.
+                     * @function create
+                     * @memberof stratos.crypto.v1.ethsecp256k1.PrivKey
+                     * @static
+                     * @param {stratos.crypto.v1.ethsecp256k1.IPrivKey=} [properties] Properties to set
+                     * @returns {stratos.crypto.v1.ethsecp256k1.PrivKey} PrivKey instance
+                     */
+                    PrivKey.create = function create(properties) {
+                        return new PrivKey(properties);
+                    };
+
+                    /**
+                     * Encodes the specified PrivKey message. Does not implicitly {@link stratos.crypto.v1.ethsecp256k1.PrivKey.verify|verify} messages.
+                     * @function encode
+                     * @memberof stratos.crypto.v1.ethsecp256k1.PrivKey
+                     * @static
+                     * @param {stratos.crypto.v1.ethsecp256k1.IPrivKey} message PrivKey message or plain object to encode
+                     * @param {$protobuf.Writer} [writer] Writer to encode to
+                     * @returns {$protobuf.Writer} Writer
+                     */
+                    PrivKey.encode = function encode(message, writer) {
+                        if (!writer)
+                            writer = $Writer.create();
+                        if (message.key != null && Object.hasOwnProperty.call(message, "key"))
+                            writer.uint32(/* id 1, wireType 2 =*/10).bytes(message.key);
+                        return writer;
+                    };
+
+                    /**
+                     * Encodes the specified PrivKey message, length delimited. Does not implicitly {@link stratos.crypto.v1.ethsecp256k1.PrivKey.verify|verify} messages.
+                     * @function encodeDelimited
+                     * @memberof stratos.crypto.v1.ethsecp256k1.PrivKey
+                     * @static
+                     * @param {stratos.crypto.v1.ethsecp256k1.IPrivKey} message PrivKey message or plain object to encode
+                     * @param {$protobuf.Writer} [writer] Writer to encode to
+                     * @returns {$protobuf.Writer} Writer
+                     */
+                    PrivKey.encodeDelimited = function encodeDelimited(message, writer) {
+                        return this.encode(message, writer).ldelim();
+                    };
+
+                    /**
+                     * Decodes a PrivKey message from the specified reader or buffer.
+                     * @function decode
+                     * @memberof stratos.crypto.v1.ethsecp256k1.PrivKey
+                     * @static
+                     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                     * @param {number} [length] Message length if known beforehand
+                     * @returns {stratos.crypto.v1.ethsecp256k1.PrivKey} PrivKey
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    PrivKey.decode = function decode(reader, length) {
+                        if (!(reader instanceof $Reader))
+                            reader = $Reader.create(reader);
+                        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.stratos.crypto.v1.ethsecp256k1.PrivKey();
+                        while (reader.pos < end) {
+                            var tag = reader.uint32();
+                            switch (tag >>> 3) {
+                            case 1:
+                                message.key = reader.bytes();
+                                break;
+                            default:
+                                reader.skipType(tag & 7);
+                                break;
+                            }
+                        }
+                        return message;
+                    };
+
+                    /**
+                     * Decodes a PrivKey message from the specified reader or buffer, length delimited.
+                     * @function decodeDelimited
+                     * @memberof stratos.crypto.v1.ethsecp256k1.PrivKey
+                     * @static
+                     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                     * @returns {stratos.crypto.v1.ethsecp256k1.PrivKey} PrivKey
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    PrivKey.decodeDelimited = function decodeDelimited(reader) {
+                        if (!(reader instanceof $Reader))
+                            reader = new $Reader(reader);
+                        return this.decode(reader, reader.uint32());
+                    };
+
+                    /**
+                     * Verifies a PrivKey message.
+                     * @function verify
+                     * @memberof stratos.crypto.v1.ethsecp256k1.PrivKey
+                     * @static
+                     * @param {Object.<string,*>} message Plain object to verify
+                     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                     */
+                    PrivKey.verify = function verify(message) {
+                        if (typeof message !== "object" || message === null)
+                            return "object expected";
+                        if (message.key != null && message.hasOwnProperty("key"))
+                            if (!(message.key && typeof message.key.length === "number" || $util.isString(message.key)))
+                                return "key: buffer expected";
+                        return null;
+                    };
+
+                    /**
+                     * Creates a PrivKey message from a plain object. Also converts values to their respective internal types.
+                     * @function fromObject
+                     * @memberof stratos.crypto.v1.ethsecp256k1.PrivKey
+                     * @static
+                     * @param {Object.<string,*>} object Plain object
+                     * @returns {stratos.crypto.v1.ethsecp256k1.PrivKey} PrivKey
+                     */
+                    PrivKey.fromObject = function fromObject(object) {
+                        if (object instanceof $root.stratos.crypto.v1.ethsecp256k1.PrivKey)
+                            return object;
+                        var message = new $root.stratos.crypto.v1.ethsecp256k1.PrivKey();
+                        if (object.key != null)
+                            if (typeof object.key === "string")
+                                $util.base64.decode(object.key, message.key = $util.newBuffer($util.base64.length(object.key)), 0);
+                            else if (object.key.length)
+                                message.key = object.key;
+                        return message;
+                    };
+
+                    /**
+                     * Creates a plain object from a PrivKey message. Also converts values to other types if specified.
+                     * @function toObject
+                     * @memberof stratos.crypto.v1.ethsecp256k1.PrivKey
+                     * @static
+                     * @param {stratos.crypto.v1.ethsecp256k1.PrivKey} message PrivKey
+                     * @param {$protobuf.IConversionOptions} [options] Conversion options
+                     * @returns {Object.<string,*>} Plain object
+                     */
+                    PrivKey.toObject = function toObject(message, options) {
+                        if (!options)
+                            options = {};
+                        var object = {};
+                        if (options.defaults)
+                            if (options.bytes === String)
+                                object.key = "";
+                            else {
+                                object.key = [];
+                                if (options.bytes !== Array)
+                                    object.key = $util.newBuffer(object.key);
+                            }
+                        if (message.key != null && message.hasOwnProperty("key"))
+                            object.key = options.bytes === String ? $util.base64.encode(message.key, 0, message.key.length) : options.bytes === Array ? Array.prototype.slice.call(message.key) : message.key;
+                        return object;
+                    };
+
+                    /**
+                     * Converts this PrivKey to JSON.
+                     * @function toJSON
+                     * @memberof stratos.crypto.v1.ethsecp256k1.PrivKey
+                     * @instance
+                     * @returns {Object.<string,*>} JSON object
+                     */
+                    PrivKey.prototype.toJSON = function toJSON() {
+                        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                    };
+
+                    return PrivKey;
+                })();
+
+                return ethsecp256k1;
+            })();
+
+            return v1;
+        })();
+
+        return crypto;
+    })();
+
     return stratos;
 })();
 
