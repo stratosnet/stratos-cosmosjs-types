@@ -482,110 +482,14 @@ export namespace stratos {
                 public toJSON(): { [k: string]: any };
             }
 
-            /** Properties of a FileUpload. */
-            interface IFileUpload {
-
-                /** FileUpload fileHash */
-                fileHash?: (string|null);
-
-                /** FileUpload fileInfo */
-                fileInfo?: (stratos.sds.v1.IFileInfo|null);
-            }
-
-            /** Represents a FileUpload. */
-            class FileUpload implements IFileUpload {
-
-                /**
-                 * Constructs a new FileUpload.
-                 * @param [properties] Properties to set
-                 */
-                constructor(properties?: stratos.sds.v1.IFileUpload);
-
-                /** FileUpload fileHash. */
-                public fileHash: string;
-
-                /** FileUpload fileInfo. */
-                public fileInfo?: (stratos.sds.v1.IFileInfo|null);
-
-                /**
-                 * Creates a new FileUpload instance using the specified properties.
-                 * @param [properties] Properties to set
-                 * @returns FileUpload instance
-                 */
-                public static create(properties?: stratos.sds.v1.IFileUpload): stratos.sds.v1.FileUpload;
-
-                /**
-                 * Encodes the specified FileUpload message. Does not implicitly {@link stratos.sds.v1.FileUpload.verify|verify} messages.
-                 * @param message FileUpload message or plain object to encode
-                 * @param [writer] Writer to encode to
-                 * @returns Writer
-                 */
-                public static encode(message: stratos.sds.v1.IFileUpload, writer?: $protobuf.Writer): $protobuf.Writer;
-
-                /**
-                 * Encodes the specified FileUpload message, length delimited. Does not implicitly {@link stratos.sds.v1.FileUpload.verify|verify} messages.
-                 * @param message FileUpload message or plain object to encode
-                 * @param [writer] Writer to encode to
-                 * @returns Writer
-                 */
-                public static encodeDelimited(message: stratos.sds.v1.IFileUpload, writer?: $protobuf.Writer): $protobuf.Writer;
-
-                /**
-                 * Decodes a FileUpload message from the specified reader or buffer.
-                 * @param reader Reader or buffer to decode from
-                 * @param [length] Message length if known beforehand
-                 * @returns FileUpload
-                 * @throws {Error} If the payload is not a reader or valid buffer
-                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
-                 */
-                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): stratos.sds.v1.FileUpload;
-
-                /**
-                 * Decodes a FileUpload message from the specified reader or buffer, length delimited.
-                 * @param reader Reader or buffer to decode from
-                 * @returns FileUpload
-                 * @throws {Error} If the payload is not a reader or valid buffer
-                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
-                 */
-                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): stratos.sds.v1.FileUpload;
-
-                /**
-                 * Verifies a FileUpload message.
-                 * @param message Plain object to verify
-                 * @returns `null` if valid, otherwise the reason why it is not
-                 */
-                public static verify(message: { [k: string]: any }): (string|null);
-
-                /**
-                 * Creates a FileUpload message from a plain object. Also converts values to their respective internal types.
-                 * @param object Plain object
-                 * @returns FileUpload
-                 */
-                public static fromObject(object: { [k: string]: any }): stratos.sds.v1.FileUpload;
-
-                /**
-                 * Creates a plain object from a FileUpload message. Also converts values to other types if specified.
-                 * @param message FileUpload
-                 * @param [options] Conversion options
-                 * @returns Plain object
-                 */
-                public static toObject(message: stratos.sds.v1.FileUpload, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-                /**
-                 * Converts this FileUpload to JSON.
-                 * @returns JSON object
-                 */
-                public toJSON(): { [k: string]: any };
-            }
-
             /** Properties of a FileInfo. */
             interface IFileInfo {
 
                 /** FileInfo height */
                 height?: (string|null);
 
-                /** FileInfo reporter */
-                reporter?: (string|null);
+                /** FileInfo reporters */
+                reporters?: (Uint8Array|null);
 
                 /** FileInfo uploader */
                 uploader?: (string|null);
@@ -603,8 +507,8 @@ export namespace stratos {
                 /** FileInfo height. */
                 public height: string;
 
-                /** FileInfo reporter. */
-                public reporter: string;
+                /** FileInfo reporters. */
+                public reporters: Uint8Array;
 
                 /** FileInfo uploader. */
                 public uploader: string;
@@ -686,8 +590,8 @@ export namespace stratos {
                 /** GenesisState params */
                 params?: (stratos.sds.v1.IParams|null);
 
-                /** GenesisState fileUploads */
-                fileUploads?: (stratos.sds.v1.IFileUpload[]|null);
+                /** GenesisState files */
+                files?: (stratos.sds.v1.IGenesisFileInfo[]|null);
             }
 
             /** Represents a GenesisState. */
@@ -702,8 +606,8 @@ export namespace stratos {
                 /** GenesisState params. */
                 public params?: (stratos.sds.v1.IParams|null);
 
-                /** GenesisState fileUploads. */
-                public fileUploads: stratos.sds.v1.IFileUpload[];
+                /** GenesisState files. */
+                public files: stratos.sds.v1.IGenesisFileInfo[];
 
                 /**
                  * Creates a new GenesisState instance using the specified properties.
@@ -771,6 +675,102 @@ export namespace stratos {
 
                 /**
                  * Converts this GenesisState to JSON.
+                 * @returns JSON object
+                 */
+                public toJSON(): { [k: string]: any };
+            }
+
+            /** Properties of a GenesisFileInfo. */
+            interface IGenesisFileInfo {
+
+                /** GenesisFileInfo fileHash */
+                fileHash?: (string|null);
+
+                /** GenesisFileInfo fileInfo */
+                fileInfo?: (stratos.sds.v1.IFileInfo|null);
+            }
+
+            /** Represents a GenesisFileInfo. */
+            class GenesisFileInfo implements IGenesisFileInfo {
+
+                /**
+                 * Constructs a new GenesisFileInfo.
+                 * @param [properties] Properties to set
+                 */
+                constructor(properties?: stratos.sds.v1.IGenesisFileInfo);
+
+                /** GenesisFileInfo fileHash. */
+                public fileHash: string;
+
+                /** GenesisFileInfo fileInfo. */
+                public fileInfo?: (stratos.sds.v1.IFileInfo|null);
+
+                /**
+                 * Creates a new GenesisFileInfo instance using the specified properties.
+                 * @param [properties] Properties to set
+                 * @returns GenesisFileInfo instance
+                 */
+                public static create(properties?: stratos.sds.v1.IGenesisFileInfo): stratos.sds.v1.GenesisFileInfo;
+
+                /**
+                 * Encodes the specified GenesisFileInfo message. Does not implicitly {@link stratos.sds.v1.GenesisFileInfo.verify|verify} messages.
+                 * @param message GenesisFileInfo message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encode(message: stratos.sds.v1.IGenesisFileInfo, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Encodes the specified GenesisFileInfo message, length delimited. Does not implicitly {@link stratos.sds.v1.GenesisFileInfo.verify|verify} messages.
+                 * @param message GenesisFileInfo message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encodeDelimited(message: stratos.sds.v1.IGenesisFileInfo, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Decodes a GenesisFileInfo message from the specified reader or buffer.
+                 * @param reader Reader or buffer to decode from
+                 * @param [length] Message length if known beforehand
+                 * @returns GenesisFileInfo
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): stratos.sds.v1.GenesisFileInfo;
+
+                /**
+                 * Decodes a GenesisFileInfo message from the specified reader or buffer, length delimited.
+                 * @param reader Reader or buffer to decode from
+                 * @returns GenesisFileInfo
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): stratos.sds.v1.GenesisFileInfo;
+
+                /**
+                 * Verifies a GenesisFileInfo message.
+                 * @param message Plain object to verify
+                 * @returns `null` if valid, otherwise the reason why it is not
+                 */
+                public static verify(message: { [k: string]: any }): (string|null);
+
+                /**
+                 * Creates a GenesisFileInfo message from a plain object. Also converts values to their respective internal types.
+                 * @param object Plain object
+                 * @returns GenesisFileInfo
+                 */
+                public static fromObject(object: { [k: string]: any }): stratos.sds.v1.GenesisFileInfo;
+
+                /**
+                 * Creates a plain object from a GenesisFileInfo message. Also converts values to other types if specified.
+                 * @param message GenesisFileInfo
+                 * @param [options] Conversion options
+                 * @returns Plain object
+                 */
+                public static toObject(message: stratos.sds.v1.GenesisFileInfo, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                /**
+                 * Converts this GenesisFileInfo to JSON.
                  * @returns JSON object
                  */
                 public toJSON(): { [k: string]: any };
@@ -950,102 +950,6 @@ export namespace stratos {
                 public toJSON(): { [k: string]: any };
             }
 
-            /** Properties of a MsgPrepay. */
-            interface IMsgPrepay {
-
-                /** MsgPrepay sender */
-                sender?: (string|null);
-
-                /** MsgPrepay coins */
-                coins?: (cosmos.base.v1beta1.ICoin[]|null);
-            }
-
-            /** Represents a MsgPrepay. */
-            class MsgPrepay implements IMsgPrepay {
-
-                /**
-                 * Constructs a new MsgPrepay.
-                 * @param [properties] Properties to set
-                 */
-                constructor(properties?: stratos.sds.v1.IMsgPrepay);
-
-                /** MsgPrepay sender. */
-                public sender: string;
-
-                /** MsgPrepay coins. */
-                public coins: cosmos.base.v1beta1.ICoin[];
-
-                /**
-                 * Creates a new MsgPrepay instance using the specified properties.
-                 * @param [properties] Properties to set
-                 * @returns MsgPrepay instance
-                 */
-                public static create(properties?: stratos.sds.v1.IMsgPrepay): stratos.sds.v1.MsgPrepay;
-
-                /**
-                 * Encodes the specified MsgPrepay message. Does not implicitly {@link stratos.sds.v1.MsgPrepay.verify|verify} messages.
-                 * @param message MsgPrepay message or plain object to encode
-                 * @param [writer] Writer to encode to
-                 * @returns Writer
-                 */
-                public static encode(message: stratos.sds.v1.IMsgPrepay, writer?: $protobuf.Writer): $protobuf.Writer;
-
-                /**
-                 * Encodes the specified MsgPrepay message, length delimited. Does not implicitly {@link stratos.sds.v1.MsgPrepay.verify|verify} messages.
-                 * @param message MsgPrepay message or plain object to encode
-                 * @param [writer] Writer to encode to
-                 * @returns Writer
-                 */
-                public static encodeDelimited(message: stratos.sds.v1.IMsgPrepay, writer?: $protobuf.Writer): $protobuf.Writer;
-
-                /**
-                 * Decodes a MsgPrepay message from the specified reader or buffer.
-                 * @param reader Reader or buffer to decode from
-                 * @param [length] Message length if known beforehand
-                 * @returns MsgPrepay
-                 * @throws {Error} If the payload is not a reader or valid buffer
-                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
-                 */
-                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): stratos.sds.v1.MsgPrepay;
-
-                /**
-                 * Decodes a MsgPrepay message from the specified reader or buffer, length delimited.
-                 * @param reader Reader or buffer to decode from
-                 * @returns MsgPrepay
-                 * @throws {Error} If the payload is not a reader or valid buffer
-                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
-                 */
-                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): stratos.sds.v1.MsgPrepay;
-
-                /**
-                 * Verifies a MsgPrepay message.
-                 * @param message Plain object to verify
-                 * @returns `null` if valid, otherwise the reason why it is not
-                 */
-                public static verify(message: { [k: string]: any }): (string|null);
-
-                /**
-                 * Creates a MsgPrepay message from a plain object. Also converts values to their respective internal types.
-                 * @param object Plain object
-                 * @returns MsgPrepay
-                 */
-                public static fromObject(object: { [k: string]: any }): stratos.sds.v1.MsgPrepay;
-
-                /**
-                 * Creates a plain object from a MsgPrepay message. Also converts values to other types if specified.
-                 * @param message MsgPrepay
-                 * @param [options] Conversion options
-                 * @returns Plain object
-                 */
-                public static toObject(message: stratos.sds.v1.MsgPrepay, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-                /**
-                 * Converts this MsgPrepay to JSON.
-                 * @returns JSON object
-                 */
-                public toJSON(): { [k: string]: any };
-            }
-
             /** Properties of a MsgFileUploadResponse. */
             interface IMsgFileUploadResponse {
             }
@@ -1125,6 +1029,108 @@ export namespace stratos {
 
                 /**
                  * Converts this MsgFileUploadResponse to JSON.
+                 * @returns JSON object
+                 */
+                public toJSON(): { [k: string]: any };
+            }
+
+            /** Properties of a MsgPrepay. */
+            interface IMsgPrepay {
+
+                /** MsgPrepay sender */
+                sender?: (string|null);
+
+                /** MsgPrepay beneficiary */
+                beneficiary?: (string|null);
+
+                /** MsgPrepay amount */
+                amount?: (cosmos.base.v1beta1.ICoin[]|null);
+            }
+
+            /** Represents a MsgPrepay. */
+            class MsgPrepay implements IMsgPrepay {
+
+                /**
+                 * Constructs a new MsgPrepay.
+                 * @param [properties] Properties to set
+                 */
+                constructor(properties?: stratos.sds.v1.IMsgPrepay);
+
+                /** MsgPrepay sender. */
+                public sender: string;
+
+                /** MsgPrepay beneficiary. */
+                public beneficiary: string;
+
+                /** MsgPrepay amount. */
+                public amount: cosmos.base.v1beta1.ICoin[];
+
+                /**
+                 * Creates a new MsgPrepay instance using the specified properties.
+                 * @param [properties] Properties to set
+                 * @returns MsgPrepay instance
+                 */
+                public static create(properties?: stratos.sds.v1.IMsgPrepay): stratos.sds.v1.MsgPrepay;
+
+                /**
+                 * Encodes the specified MsgPrepay message. Does not implicitly {@link stratos.sds.v1.MsgPrepay.verify|verify} messages.
+                 * @param message MsgPrepay message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encode(message: stratos.sds.v1.IMsgPrepay, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Encodes the specified MsgPrepay message, length delimited. Does not implicitly {@link stratos.sds.v1.MsgPrepay.verify|verify} messages.
+                 * @param message MsgPrepay message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encodeDelimited(message: stratos.sds.v1.IMsgPrepay, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Decodes a MsgPrepay message from the specified reader or buffer.
+                 * @param reader Reader or buffer to decode from
+                 * @param [length] Message length if known beforehand
+                 * @returns MsgPrepay
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): stratos.sds.v1.MsgPrepay;
+
+                /**
+                 * Decodes a MsgPrepay message from the specified reader or buffer, length delimited.
+                 * @param reader Reader or buffer to decode from
+                 * @returns MsgPrepay
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): stratos.sds.v1.MsgPrepay;
+
+                /**
+                 * Verifies a MsgPrepay message.
+                 * @param message Plain object to verify
+                 * @returns `null` if valid, otherwise the reason why it is not
+                 */
+                public static verify(message: { [k: string]: any }): (string|null);
+
+                /**
+                 * Creates a MsgPrepay message from a plain object. Also converts values to their respective internal types.
+                 * @param object Plain object
+                 * @returns MsgPrepay
+                 */
+                public static fromObject(object: { [k: string]: any }): stratos.sds.v1.MsgPrepay;
+
+                /**
+                 * Creates a plain object from a MsgPrepay message. Also converts values to other types if specified.
+                 * @param message MsgPrepay
+                 * @param [options] Conversion options
+                 * @returns Plain object
+                 */
+                public static toObject(message: stratos.sds.v1.MsgPrepay, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                /**
+                 * Converts this MsgPrepay to JSON.
                  * @returns JSON object
                  */
                 public toJSON(): { [k: string]: any };

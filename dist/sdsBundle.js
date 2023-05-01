@@ -1053,221 +1053,6 @@ $root.stratos = (function() {
                 return Params;
             })();
 
-            v1.FileUpload = (function() {
-
-                /**
-                 * Properties of a FileUpload.
-                 * @memberof stratos.sds.v1
-                 * @interface IFileUpload
-                 * @property {string|null} [fileHash] FileUpload fileHash
-                 * @property {stratos.sds.v1.IFileInfo|null} [fileInfo] FileUpload fileInfo
-                 */
-
-                /**
-                 * Constructs a new FileUpload.
-                 * @memberof stratos.sds.v1
-                 * @classdesc Represents a FileUpload.
-                 * @implements IFileUpload
-                 * @constructor
-                 * @param {stratos.sds.v1.IFileUpload=} [properties] Properties to set
-                 */
-                function FileUpload(properties) {
-                    if (properties)
-                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                            if (properties[keys[i]] != null)
-                                this[keys[i]] = properties[keys[i]];
-                }
-
-                /**
-                 * FileUpload fileHash.
-                 * @member {string} fileHash
-                 * @memberof stratos.sds.v1.FileUpload
-                 * @instance
-                 */
-                FileUpload.prototype.fileHash = "";
-
-                /**
-                 * FileUpload fileInfo.
-                 * @member {stratos.sds.v1.IFileInfo|null|undefined} fileInfo
-                 * @memberof stratos.sds.v1.FileUpload
-                 * @instance
-                 */
-                FileUpload.prototype.fileInfo = null;
-
-                /**
-                 * Creates a new FileUpload instance using the specified properties.
-                 * @function create
-                 * @memberof stratos.sds.v1.FileUpload
-                 * @static
-                 * @param {stratos.sds.v1.IFileUpload=} [properties] Properties to set
-                 * @returns {stratos.sds.v1.FileUpload} FileUpload instance
-                 */
-                FileUpload.create = function create(properties) {
-                    return new FileUpload(properties);
-                };
-
-                /**
-                 * Encodes the specified FileUpload message. Does not implicitly {@link stratos.sds.v1.FileUpload.verify|verify} messages.
-                 * @function encode
-                 * @memberof stratos.sds.v1.FileUpload
-                 * @static
-                 * @param {stratos.sds.v1.IFileUpload} message FileUpload message or plain object to encode
-                 * @param {$protobuf.Writer} [writer] Writer to encode to
-                 * @returns {$protobuf.Writer} Writer
-                 */
-                FileUpload.encode = function encode(message, writer) {
-                    if (!writer)
-                        writer = $Writer.create();
-                    if (message.fileHash != null && Object.hasOwnProperty.call(message, "fileHash"))
-                        writer.uint32(/* id 1, wireType 2 =*/10).string(message.fileHash);
-                    if (message.fileInfo != null && Object.hasOwnProperty.call(message, "fileInfo"))
-                        $root.stratos.sds.v1.FileInfo.encode(message.fileInfo, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-                    return writer;
-                };
-
-                /**
-                 * Encodes the specified FileUpload message, length delimited. Does not implicitly {@link stratos.sds.v1.FileUpload.verify|verify} messages.
-                 * @function encodeDelimited
-                 * @memberof stratos.sds.v1.FileUpload
-                 * @static
-                 * @param {stratos.sds.v1.IFileUpload} message FileUpload message or plain object to encode
-                 * @param {$protobuf.Writer} [writer] Writer to encode to
-                 * @returns {$protobuf.Writer} Writer
-                 */
-                FileUpload.encodeDelimited = function encodeDelimited(message, writer) {
-                    return this.encode(message, writer).ldelim();
-                };
-
-                /**
-                 * Decodes a FileUpload message from the specified reader or buffer.
-                 * @function decode
-                 * @memberof stratos.sds.v1.FileUpload
-                 * @static
-                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-                 * @param {number} [length] Message length if known beforehand
-                 * @returns {stratos.sds.v1.FileUpload} FileUpload
-                 * @throws {Error} If the payload is not a reader or valid buffer
-                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
-                 */
-                FileUpload.decode = function decode(reader, length) {
-                    if (!(reader instanceof $Reader))
-                        reader = $Reader.create(reader);
-                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.stratos.sds.v1.FileUpload();
-                    while (reader.pos < end) {
-                        var tag = reader.uint32();
-                        switch (tag >>> 3) {
-                        case 1:
-                            message.fileHash = reader.string();
-                            break;
-                        case 2:
-                            message.fileInfo = $root.stratos.sds.v1.FileInfo.decode(reader, reader.uint32());
-                            break;
-                        default:
-                            reader.skipType(tag & 7);
-                            break;
-                        }
-                    }
-                    return message;
-                };
-
-                /**
-                 * Decodes a FileUpload message from the specified reader or buffer, length delimited.
-                 * @function decodeDelimited
-                 * @memberof stratos.sds.v1.FileUpload
-                 * @static
-                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-                 * @returns {stratos.sds.v1.FileUpload} FileUpload
-                 * @throws {Error} If the payload is not a reader or valid buffer
-                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
-                 */
-                FileUpload.decodeDelimited = function decodeDelimited(reader) {
-                    if (!(reader instanceof $Reader))
-                        reader = new $Reader(reader);
-                    return this.decode(reader, reader.uint32());
-                };
-
-                /**
-                 * Verifies a FileUpload message.
-                 * @function verify
-                 * @memberof stratos.sds.v1.FileUpload
-                 * @static
-                 * @param {Object.<string,*>} message Plain object to verify
-                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
-                 */
-                FileUpload.verify = function verify(message) {
-                    if (typeof message !== "object" || message === null)
-                        return "object expected";
-                    if (message.fileHash != null && message.hasOwnProperty("fileHash"))
-                        if (!$util.isString(message.fileHash))
-                            return "fileHash: string expected";
-                    if (message.fileInfo != null && message.hasOwnProperty("fileInfo")) {
-                        var error = $root.stratos.sds.v1.FileInfo.verify(message.fileInfo);
-                        if (error)
-                            return "fileInfo." + error;
-                    }
-                    return null;
-                };
-
-                /**
-                 * Creates a FileUpload message from a plain object. Also converts values to their respective internal types.
-                 * @function fromObject
-                 * @memberof stratos.sds.v1.FileUpload
-                 * @static
-                 * @param {Object.<string,*>} object Plain object
-                 * @returns {stratos.sds.v1.FileUpload} FileUpload
-                 */
-                FileUpload.fromObject = function fromObject(object) {
-                    if (object instanceof $root.stratos.sds.v1.FileUpload)
-                        return object;
-                    var message = new $root.stratos.sds.v1.FileUpload();
-                    if (object.fileHash != null)
-                        message.fileHash = String(object.fileHash);
-                    if (object.fileInfo != null) {
-                        if (typeof object.fileInfo !== "object")
-                            throw TypeError(".stratos.sds.v1.FileUpload.fileInfo: object expected");
-                        message.fileInfo = $root.stratos.sds.v1.FileInfo.fromObject(object.fileInfo);
-                    }
-                    return message;
-                };
-
-                /**
-                 * Creates a plain object from a FileUpload message. Also converts values to other types if specified.
-                 * @function toObject
-                 * @memberof stratos.sds.v1.FileUpload
-                 * @static
-                 * @param {stratos.sds.v1.FileUpload} message FileUpload
-                 * @param {$protobuf.IConversionOptions} [options] Conversion options
-                 * @returns {Object.<string,*>} Plain object
-                 */
-                FileUpload.toObject = function toObject(message, options) {
-                    if (!options)
-                        options = {};
-                    var object = {};
-                    if (options.defaults) {
-                        object.fileHash = "";
-                        object.fileInfo = null;
-                    }
-                    if (message.fileHash != null && message.hasOwnProperty("fileHash"))
-                        object.fileHash = message.fileHash;
-                    if (message.fileInfo != null && message.hasOwnProperty("fileInfo"))
-                        object.fileInfo = $root.stratos.sds.v1.FileInfo.toObject(message.fileInfo, options);
-                    return object;
-                };
-
-                /**
-                 * Converts this FileUpload to JSON.
-                 * @function toJSON
-                 * @memberof stratos.sds.v1.FileUpload
-                 * @instance
-                 * @returns {Object.<string,*>} JSON object
-                 */
-                FileUpload.prototype.toJSON = function toJSON() {
-                    return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-                };
-
-                return FileUpload;
-            })();
-
             v1.FileInfo = (function() {
 
                 /**
@@ -1275,7 +1060,7 @@ $root.stratos = (function() {
                  * @memberof stratos.sds.v1
                  * @interface IFileInfo
                  * @property {string|null} [height] FileInfo height
-                 * @property {string|null} [reporter] FileInfo reporter
+                 * @property {Uint8Array|null} [reporters] FileInfo reporters
                  * @property {string|null} [uploader] FileInfo uploader
                  */
 
@@ -1303,12 +1088,12 @@ $root.stratos = (function() {
                 FileInfo.prototype.height = "";
 
                 /**
-                 * FileInfo reporter.
-                 * @member {string} reporter
+                 * FileInfo reporters.
+                 * @member {Uint8Array} reporters
                  * @memberof stratos.sds.v1.FileInfo
                  * @instance
                  */
-                FileInfo.prototype.reporter = "";
+                FileInfo.prototype.reporters = $util.newBuffer([]);
 
                 /**
                  * FileInfo uploader.
@@ -1344,8 +1129,8 @@ $root.stratos = (function() {
                         writer = $Writer.create();
                     if (message.height != null && Object.hasOwnProperty.call(message, "height"))
                         writer.uint32(/* id 1, wireType 2 =*/10).string(message.height);
-                    if (message.reporter != null && Object.hasOwnProperty.call(message, "reporter"))
-                        writer.uint32(/* id 2, wireType 2 =*/18).string(message.reporter);
+                    if (message.reporters != null && Object.hasOwnProperty.call(message, "reporters"))
+                        writer.uint32(/* id 2, wireType 2 =*/18).bytes(message.reporters);
                     if (message.uploader != null && Object.hasOwnProperty.call(message, "uploader"))
                         writer.uint32(/* id 3, wireType 2 =*/26).string(message.uploader);
                     return writer;
@@ -1386,7 +1171,7 @@ $root.stratos = (function() {
                             message.height = reader.string();
                             break;
                         case 2:
-                            message.reporter = reader.string();
+                            message.reporters = reader.bytes();
                             break;
                         case 3:
                             message.uploader = reader.string();
@@ -1429,9 +1214,9 @@ $root.stratos = (function() {
                     if (message.height != null && message.hasOwnProperty("height"))
                         if (!$util.isString(message.height))
                             return "height: string expected";
-                    if (message.reporter != null && message.hasOwnProperty("reporter"))
-                        if (!$util.isString(message.reporter))
-                            return "reporter: string expected";
+                    if (message.reporters != null && message.hasOwnProperty("reporters"))
+                        if (!(message.reporters && typeof message.reporters.length === "number" || $util.isString(message.reporters)))
+                            return "reporters: buffer expected";
                     if (message.uploader != null && message.hasOwnProperty("uploader"))
                         if (!$util.isString(message.uploader))
                             return "uploader: string expected";
@@ -1452,8 +1237,11 @@ $root.stratos = (function() {
                     var message = new $root.stratos.sds.v1.FileInfo();
                     if (object.height != null)
                         message.height = String(object.height);
-                    if (object.reporter != null)
-                        message.reporter = String(object.reporter);
+                    if (object.reporters != null)
+                        if (typeof object.reporters === "string")
+                            $util.base64.decode(object.reporters, message.reporters = $util.newBuffer($util.base64.length(object.reporters)), 0);
+                        else if (object.reporters.length)
+                            message.reporters = object.reporters;
                     if (object.uploader != null)
                         message.uploader = String(object.uploader);
                     return message;
@@ -1474,13 +1262,19 @@ $root.stratos = (function() {
                     var object = {};
                     if (options.defaults) {
                         object.height = "";
-                        object.reporter = "";
+                        if (options.bytes === String)
+                            object.reporters = "";
+                        else {
+                            object.reporters = [];
+                            if (options.bytes !== Array)
+                                object.reporters = $util.newBuffer(object.reporters);
+                        }
                         object.uploader = "";
                     }
                     if (message.height != null && message.hasOwnProperty("height"))
                         object.height = message.height;
-                    if (message.reporter != null && message.hasOwnProperty("reporter"))
-                        object.reporter = message.reporter;
+                    if (message.reporters != null && message.hasOwnProperty("reporters"))
+                        object.reporters = options.bytes === String ? $util.base64.encode(message.reporters, 0, message.reporters.length) : options.bytes === Array ? Array.prototype.slice.call(message.reporters) : message.reporters;
                     if (message.uploader != null && message.hasOwnProperty("uploader"))
                         object.uploader = message.uploader;
                     return object;
@@ -1507,7 +1301,7 @@ $root.stratos = (function() {
                  * @memberof stratos.sds.v1
                  * @interface IGenesisState
                  * @property {stratos.sds.v1.IParams|null} [params] GenesisState params
-                 * @property {Array.<stratos.sds.v1.IFileUpload>|null} [fileUploads] GenesisState fileUploads
+                 * @property {Array.<stratos.sds.v1.IGenesisFileInfo>|null} [files] GenesisState files
                  */
 
                 /**
@@ -1519,7 +1313,7 @@ $root.stratos = (function() {
                  * @param {stratos.sds.v1.IGenesisState=} [properties] Properties to set
                  */
                 function GenesisState(properties) {
-                    this.fileUploads = [];
+                    this.files = [];
                     if (properties)
                         for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                             if (properties[keys[i]] != null)
@@ -1535,12 +1329,12 @@ $root.stratos = (function() {
                 GenesisState.prototype.params = null;
 
                 /**
-                 * GenesisState fileUploads.
-                 * @member {Array.<stratos.sds.v1.IFileUpload>} fileUploads
+                 * GenesisState files.
+                 * @member {Array.<stratos.sds.v1.IGenesisFileInfo>} files
                  * @memberof stratos.sds.v1.GenesisState
                  * @instance
                  */
-                GenesisState.prototype.fileUploads = $util.emptyArray;
+                GenesisState.prototype.files = $util.emptyArray;
 
                 /**
                  * Creates a new GenesisState instance using the specified properties.
@@ -1568,9 +1362,9 @@ $root.stratos = (function() {
                         writer = $Writer.create();
                     if (message.params != null && Object.hasOwnProperty.call(message, "params"))
                         $root.stratos.sds.v1.Params.encode(message.params, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-                    if (message.fileUploads != null && message.fileUploads.length)
-                        for (var i = 0; i < message.fileUploads.length; ++i)
-                            $root.stratos.sds.v1.FileUpload.encode(message.fileUploads[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                    if (message.files != null && message.files.length)
+                        for (var i = 0; i < message.files.length; ++i)
+                            $root.stratos.sds.v1.GenesisFileInfo.encode(message.files[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
                     return writer;
                 };
 
@@ -1609,9 +1403,9 @@ $root.stratos = (function() {
                             message.params = $root.stratos.sds.v1.Params.decode(reader, reader.uint32());
                             break;
                         case 2:
-                            if (!(message.fileUploads && message.fileUploads.length))
-                                message.fileUploads = [];
-                            message.fileUploads.push($root.stratos.sds.v1.FileUpload.decode(reader, reader.uint32()));
+                            if (!(message.files && message.files.length))
+                                message.files = [];
+                            message.files.push($root.stratos.sds.v1.GenesisFileInfo.decode(reader, reader.uint32()));
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -1653,13 +1447,13 @@ $root.stratos = (function() {
                         if (error)
                             return "params." + error;
                     }
-                    if (message.fileUploads != null && message.hasOwnProperty("fileUploads")) {
-                        if (!Array.isArray(message.fileUploads))
-                            return "fileUploads: array expected";
-                        for (var i = 0; i < message.fileUploads.length; ++i) {
-                            var error = $root.stratos.sds.v1.FileUpload.verify(message.fileUploads[i]);
+                    if (message.files != null && message.hasOwnProperty("files")) {
+                        if (!Array.isArray(message.files))
+                            return "files: array expected";
+                        for (var i = 0; i < message.files.length; ++i) {
+                            var error = $root.stratos.sds.v1.GenesisFileInfo.verify(message.files[i]);
                             if (error)
-                                return "fileUploads." + error;
+                                return "files." + error;
                         }
                     }
                     return null;
@@ -1682,14 +1476,14 @@ $root.stratos = (function() {
                             throw TypeError(".stratos.sds.v1.GenesisState.params: object expected");
                         message.params = $root.stratos.sds.v1.Params.fromObject(object.params);
                     }
-                    if (object.fileUploads) {
-                        if (!Array.isArray(object.fileUploads))
-                            throw TypeError(".stratos.sds.v1.GenesisState.fileUploads: array expected");
-                        message.fileUploads = [];
-                        for (var i = 0; i < object.fileUploads.length; ++i) {
-                            if (typeof object.fileUploads[i] !== "object")
-                                throw TypeError(".stratos.sds.v1.GenesisState.fileUploads: object expected");
-                            message.fileUploads[i] = $root.stratos.sds.v1.FileUpload.fromObject(object.fileUploads[i]);
+                    if (object.files) {
+                        if (!Array.isArray(object.files))
+                            throw TypeError(".stratos.sds.v1.GenesisState.files: array expected");
+                        message.files = [];
+                        for (var i = 0; i < object.files.length; ++i) {
+                            if (typeof object.files[i] !== "object")
+                                throw TypeError(".stratos.sds.v1.GenesisState.files: object expected");
+                            message.files[i] = $root.stratos.sds.v1.GenesisFileInfo.fromObject(object.files[i]);
                         }
                     }
                     return message;
@@ -1709,15 +1503,15 @@ $root.stratos = (function() {
                         options = {};
                     var object = {};
                     if (options.arrays || options.defaults)
-                        object.fileUploads = [];
+                        object.files = [];
                     if (options.defaults)
                         object.params = null;
                     if (message.params != null && message.hasOwnProperty("params"))
                         object.params = $root.stratos.sds.v1.Params.toObject(message.params, options);
-                    if (message.fileUploads && message.fileUploads.length) {
-                        object.fileUploads = [];
-                        for (var j = 0; j < message.fileUploads.length; ++j)
-                            object.fileUploads[j] = $root.stratos.sds.v1.FileUpload.toObject(message.fileUploads[j], options);
+                    if (message.files && message.files.length) {
+                        object.files = [];
+                        for (var j = 0; j < message.files.length; ++j)
+                            object.files[j] = $root.stratos.sds.v1.GenesisFileInfo.toObject(message.files[j], options);
                     }
                     return object;
                 };
@@ -1734,6 +1528,221 @@ $root.stratos = (function() {
                 };
 
                 return GenesisState;
+            })();
+
+            v1.GenesisFileInfo = (function() {
+
+                /**
+                 * Properties of a GenesisFileInfo.
+                 * @memberof stratos.sds.v1
+                 * @interface IGenesisFileInfo
+                 * @property {string|null} [fileHash] GenesisFileInfo fileHash
+                 * @property {stratos.sds.v1.IFileInfo|null} [fileInfo] GenesisFileInfo fileInfo
+                 */
+
+                /**
+                 * Constructs a new GenesisFileInfo.
+                 * @memberof stratos.sds.v1
+                 * @classdesc Represents a GenesisFileInfo.
+                 * @implements IGenesisFileInfo
+                 * @constructor
+                 * @param {stratos.sds.v1.IGenesisFileInfo=} [properties] Properties to set
+                 */
+                function GenesisFileInfo(properties) {
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+
+                /**
+                 * GenesisFileInfo fileHash.
+                 * @member {string} fileHash
+                 * @memberof stratos.sds.v1.GenesisFileInfo
+                 * @instance
+                 */
+                GenesisFileInfo.prototype.fileHash = "";
+
+                /**
+                 * GenesisFileInfo fileInfo.
+                 * @member {stratos.sds.v1.IFileInfo|null|undefined} fileInfo
+                 * @memberof stratos.sds.v1.GenesisFileInfo
+                 * @instance
+                 */
+                GenesisFileInfo.prototype.fileInfo = null;
+
+                /**
+                 * Creates a new GenesisFileInfo instance using the specified properties.
+                 * @function create
+                 * @memberof stratos.sds.v1.GenesisFileInfo
+                 * @static
+                 * @param {stratos.sds.v1.IGenesisFileInfo=} [properties] Properties to set
+                 * @returns {stratos.sds.v1.GenesisFileInfo} GenesisFileInfo instance
+                 */
+                GenesisFileInfo.create = function create(properties) {
+                    return new GenesisFileInfo(properties);
+                };
+
+                /**
+                 * Encodes the specified GenesisFileInfo message. Does not implicitly {@link stratos.sds.v1.GenesisFileInfo.verify|verify} messages.
+                 * @function encode
+                 * @memberof stratos.sds.v1.GenesisFileInfo
+                 * @static
+                 * @param {stratos.sds.v1.IGenesisFileInfo} message GenesisFileInfo message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                GenesisFileInfo.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.fileHash != null && Object.hasOwnProperty.call(message, "fileHash"))
+                        writer.uint32(/* id 1, wireType 2 =*/10).string(message.fileHash);
+                    if (message.fileInfo != null && Object.hasOwnProperty.call(message, "fileInfo"))
+                        $root.stratos.sds.v1.FileInfo.encode(message.fileInfo, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                    return writer;
+                };
+
+                /**
+                 * Encodes the specified GenesisFileInfo message, length delimited. Does not implicitly {@link stratos.sds.v1.GenesisFileInfo.verify|verify} messages.
+                 * @function encodeDelimited
+                 * @memberof stratos.sds.v1.GenesisFileInfo
+                 * @static
+                 * @param {stratos.sds.v1.IGenesisFileInfo} message GenesisFileInfo message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                GenesisFileInfo.encodeDelimited = function encodeDelimited(message, writer) {
+                    return this.encode(message, writer).ldelim();
+                };
+
+                /**
+                 * Decodes a GenesisFileInfo message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof stratos.sds.v1.GenesisFileInfo
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {stratos.sds.v1.GenesisFileInfo} GenesisFileInfo
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                GenesisFileInfo.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.stratos.sds.v1.GenesisFileInfo();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 1:
+                            message.fileHash = reader.string();
+                            break;
+                        case 2:
+                            message.fileInfo = $root.stratos.sds.v1.FileInfo.decode(reader, reader.uint32());
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+
+                /**
+                 * Decodes a GenesisFileInfo message from the specified reader or buffer, length delimited.
+                 * @function decodeDelimited
+                 * @memberof stratos.sds.v1.GenesisFileInfo
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @returns {stratos.sds.v1.GenesisFileInfo} GenesisFileInfo
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                GenesisFileInfo.decodeDelimited = function decodeDelimited(reader) {
+                    if (!(reader instanceof $Reader))
+                        reader = new $Reader(reader);
+                    return this.decode(reader, reader.uint32());
+                };
+
+                /**
+                 * Verifies a GenesisFileInfo message.
+                 * @function verify
+                 * @memberof stratos.sds.v1.GenesisFileInfo
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                GenesisFileInfo.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    if (message.fileHash != null && message.hasOwnProperty("fileHash"))
+                        if (!$util.isString(message.fileHash))
+                            return "fileHash: string expected";
+                    if (message.fileInfo != null && message.hasOwnProperty("fileInfo")) {
+                        var error = $root.stratos.sds.v1.FileInfo.verify(message.fileInfo);
+                        if (error)
+                            return "fileInfo." + error;
+                    }
+                    return null;
+                };
+
+                /**
+                 * Creates a GenesisFileInfo message from a plain object. Also converts values to their respective internal types.
+                 * @function fromObject
+                 * @memberof stratos.sds.v1.GenesisFileInfo
+                 * @static
+                 * @param {Object.<string,*>} object Plain object
+                 * @returns {stratos.sds.v1.GenesisFileInfo} GenesisFileInfo
+                 */
+                GenesisFileInfo.fromObject = function fromObject(object) {
+                    if (object instanceof $root.stratos.sds.v1.GenesisFileInfo)
+                        return object;
+                    var message = new $root.stratos.sds.v1.GenesisFileInfo();
+                    if (object.fileHash != null)
+                        message.fileHash = String(object.fileHash);
+                    if (object.fileInfo != null) {
+                        if (typeof object.fileInfo !== "object")
+                            throw TypeError(".stratos.sds.v1.GenesisFileInfo.fileInfo: object expected");
+                        message.fileInfo = $root.stratos.sds.v1.FileInfo.fromObject(object.fileInfo);
+                    }
+                    return message;
+                };
+
+                /**
+                 * Creates a plain object from a GenesisFileInfo message. Also converts values to other types if specified.
+                 * @function toObject
+                 * @memberof stratos.sds.v1.GenesisFileInfo
+                 * @static
+                 * @param {stratos.sds.v1.GenesisFileInfo} message GenesisFileInfo
+                 * @param {$protobuf.IConversionOptions} [options] Conversion options
+                 * @returns {Object.<string,*>} Plain object
+                 */
+                GenesisFileInfo.toObject = function toObject(message, options) {
+                    if (!options)
+                        options = {};
+                    var object = {};
+                    if (options.defaults) {
+                        object.fileHash = "";
+                        object.fileInfo = null;
+                    }
+                    if (message.fileHash != null && message.hasOwnProperty("fileHash"))
+                        object.fileHash = message.fileHash;
+                    if (message.fileInfo != null && message.hasOwnProperty("fileInfo"))
+                        object.fileInfo = $root.stratos.sds.v1.FileInfo.toObject(message.fileInfo, options);
+                    return object;
+                };
+
+                /**
+                 * Converts this GenesisFileInfo to JSON.
+                 * @function toJSON
+                 * @memberof stratos.sds.v1.GenesisFileInfo
+                 * @instance
+                 * @returns {Object.<string,*>} JSON object
+                 */
+                GenesisFileInfo.prototype.toJSON = function toJSON() {
+                    return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                };
+
+                return GenesisFileInfo;
             })();
 
             v1.Msg = (function() {
@@ -2091,237 +2100,6 @@ $root.stratos = (function() {
                 return MsgFileUpload;
             })();
 
-            v1.MsgPrepay = (function() {
-
-                /**
-                 * Properties of a MsgPrepay.
-                 * @memberof stratos.sds.v1
-                 * @interface IMsgPrepay
-                 * @property {string|null} [sender] MsgPrepay sender
-                 * @property {Array.<cosmos.base.v1beta1.ICoin>|null} [coins] MsgPrepay coins
-                 */
-
-                /**
-                 * Constructs a new MsgPrepay.
-                 * @memberof stratos.sds.v1
-                 * @classdesc Represents a MsgPrepay.
-                 * @implements IMsgPrepay
-                 * @constructor
-                 * @param {stratos.sds.v1.IMsgPrepay=} [properties] Properties to set
-                 */
-                function MsgPrepay(properties) {
-                    this.coins = [];
-                    if (properties)
-                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                            if (properties[keys[i]] != null)
-                                this[keys[i]] = properties[keys[i]];
-                }
-
-                /**
-                 * MsgPrepay sender.
-                 * @member {string} sender
-                 * @memberof stratos.sds.v1.MsgPrepay
-                 * @instance
-                 */
-                MsgPrepay.prototype.sender = "";
-
-                /**
-                 * MsgPrepay coins.
-                 * @member {Array.<cosmos.base.v1beta1.ICoin>} coins
-                 * @memberof stratos.sds.v1.MsgPrepay
-                 * @instance
-                 */
-                MsgPrepay.prototype.coins = $util.emptyArray;
-
-                /**
-                 * Creates a new MsgPrepay instance using the specified properties.
-                 * @function create
-                 * @memberof stratos.sds.v1.MsgPrepay
-                 * @static
-                 * @param {stratos.sds.v1.IMsgPrepay=} [properties] Properties to set
-                 * @returns {stratos.sds.v1.MsgPrepay} MsgPrepay instance
-                 */
-                MsgPrepay.create = function create(properties) {
-                    return new MsgPrepay(properties);
-                };
-
-                /**
-                 * Encodes the specified MsgPrepay message. Does not implicitly {@link stratos.sds.v1.MsgPrepay.verify|verify} messages.
-                 * @function encode
-                 * @memberof stratos.sds.v1.MsgPrepay
-                 * @static
-                 * @param {stratos.sds.v1.IMsgPrepay} message MsgPrepay message or plain object to encode
-                 * @param {$protobuf.Writer} [writer] Writer to encode to
-                 * @returns {$protobuf.Writer} Writer
-                 */
-                MsgPrepay.encode = function encode(message, writer) {
-                    if (!writer)
-                        writer = $Writer.create();
-                    if (message.sender != null && Object.hasOwnProperty.call(message, "sender"))
-                        writer.uint32(/* id 1, wireType 2 =*/10).string(message.sender);
-                    if (message.coins != null && message.coins.length)
-                        for (var i = 0; i < message.coins.length; ++i)
-                            $root.cosmos.base.v1beta1.Coin.encode(message.coins[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-                    return writer;
-                };
-
-                /**
-                 * Encodes the specified MsgPrepay message, length delimited. Does not implicitly {@link stratos.sds.v1.MsgPrepay.verify|verify} messages.
-                 * @function encodeDelimited
-                 * @memberof stratos.sds.v1.MsgPrepay
-                 * @static
-                 * @param {stratos.sds.v1.IMsgPrepay} message MsgPrepay message or plain object to encode
-                 * @param {$protobuf.Writer} [writer] Writer to encode to
-                 * @returns {$protobuf.Writer} Writer
-                 */
-                MsgPrepay.encodeDelimited = function encodeDelimited(message, writer) {
-                    return this.encode(message, writer).ldelim();
-                };
-
-                /**
-                 * Decodes a MsgPrepay message from the specified reader or buffer.
-                 * @function decode
-                 * @memberof stratos.sds.v1.MsgPrepay
-                 * @static
-                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-                 * @param {number} [length] Message length if known beforehand
-                 * @returns {stratos.sds.v1.MsgPrepay} MsgPrepay
-                 * @throws {Error} If the payload is not a reader or valid buffer
-                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
-                 */
-                MsgPrepay.decode = function decode(reader, length) {
-                    if (!(reader instanceof $Reader))
-                        reader = $Reader.create(reader);
-                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.stratos.sds.v1.MsgPrepay();
-                    while (reader.pos < end) {
-                        var tag = reader.uint32();
-                        switch (tag >>> 3) {
-                        case 1:
-                            message.sender = reader.string();
-                            break;
-                        case 2:
-                            if (!(message.coins && message.coins.length))
-                                message.coins = [];
-                            message.coins.push($root.cosmos.base.v1beta1.Coin.decode(reader, reader.uint32()));
-                            break;
-                        default:
-                            reader.skipType(tag & 7);
-                            break;
-                        }
-                    }
-                    return message;
-                };
-
-                /**
-                 * Decodes a MsgPrepay message from the specified reader or buffer, length delimited.
-                 * @function decodeDelimited
-                 * @memberof stratos.sds.v1.MsgPrepay
-                 * @static
-                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-                 * @returns {stratos.sds.v1.MsgPrepay} MsgPrepay
-                 * @throws {Error} If the payload is not a reader or valid buffer
-                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
-                 */
-                MsgPrepay.decodeDelimited = function decodeDelimited(reader) {
-                    if (!(reader instanceof $Reader))
-                        reader = new $Reader(reader);
-                    return this.decode(reader, reader.uint32());
-                };
-
-                /**
-                 * Verifies a MsgPrepay message.
-                 * @function verify
-                 * @memberof stratos.sds.v1.MsgPrepay
-                 * @static
-                 * @param {Object.<string,*>} message Plain object to verify
-                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
-                 */
-                MsgPrepay.verify = function verify(message) {
-                    if (typeof message !== "object" || message === null)
-                        return "object expected";
-                    if (message.sender != null && message.hasOwnProperty("sender"))
-                        if (!$util.isString(message.sender))
-                            return "sender: string expected";
-                    if (message.coins != null && message.hasOwnProperty("coins")) {
-                        if (!Array.isArray(message.coins))
-                            return "coins: array expected";
-                        for (var i = 0; i < message.coins.length; ++i) {
-                            var error = $root.cosmos.base.v1beta1.Coin.verify(message.coins[i]);
-                            if (error)
-                                return "coins." + error;
-                        }
-                    }
-                    return null;
-                };
-
-                /**
-                 * Creates a MsgPrepay message from a plain object. Also converts values to their respective internal types.
-                 * @function fromObject
-                 * @memberof stratos.sds.v1.MsgPrepay
-                 * @static
-                 * @param {Object.<string,*>} object Plain object
-                 * @returns {stratos.sds.v1.MsgPrepay} MsgPrepay
-                 */
-                MsgPrepay.fromObject = function fromObject(object) {
-                    if (object instanceof $root.stratos.sds.v1.MsgPrepay)
-                        return object;
-                    var message = new $root.stratos.sds.v1.MsgPrepay();
-                    if (object.sender != null)
-                        message.sender = String(object.sender);
-                    if (object.coins) {
-                        if (!Array.isArray(object.coins))
-                            throw TypeError(".stratos.sds.v1.MsgPrepay.coins: array expected");
-                        message.coins = [];
-                        for (var i = 0; i < object.coins.length; ++i) {
-                            if (typeof object.coins[i] !== "object")
-                                throw TypeError(".stratos.sds.v1.MsgPrepay.coins: object expected");
-                            message.coins[i] = $root.cosmos.base.v1beta1.Coin.fromObject(object.coins[i]);
-                        }
-                    }
-                    return message;
-                };
-
-                /**
-                 * Creates a plain object from a MsgPrepay message. Also converts values to other types if specified.
-                 * @function toObject
-                 * @memberof stratos.sds.v1.MsgPrepay
-                 * @static
-                 * @param {stratos.sds.v1.MsgPrepay} message MsgPrepay
-                 * @param {$protobuf.IConversionOptions} [options] Conversion options
-                 * @returns {Object.<string,*>} Plain object
-                 */
-                MsgPrepay.toObject = function toObject(message, options) {
-                    if (!options)
-                        options = {};
-                    var object = {};
-                    if (options.arrays || options.defaults)
-                        object.coins = [];
-                    if (options.defaults)
-                        object.sender = "";
-                    if (message.sender != null && message.hasOwnProperty("sender"))
-                        object.sender = message.sender;
-                    if (message.coins && message.coins.length) {
-                        object.coins = [];
-                        for (var j = 0; j < message.coins.length; ++j)
-                            object.coins[j] = $root.cosmos.base.v1beta1.Coin.toObject(message.coins[j], options);
-                    }
-                    return object;
-                };
-
-                /**
-                 * Converts this MsgPrepay to JSON.
-                 * @function toJSON
-                 * @memberof stratos.sds.v1.MsgPrepay
-                 * @instance
-                 * @returns {Object.<string,*>} JSON object
-                 */
-                MsgPrepay.prototype.toJSON = function toJSON() {
-                    return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-                };
-
-                return MsgPrepay;
-            })();
-
             v1.MsgFileUploadResponse = (function() {
 
                 /**
@@ -2480,6 +2258,260 @@ $root.stratos = (function() {
                 };
 
                 return MsgFileUploadResponse;
+            })();
+
+            v1.MsgPrepay = (function() {
+
+                /**
+                 * Properties of a MsgPrepay.
+                 * @memberof stratos.sds.v1
+                 * @interface IMsgPrepay
+                 * @property {string|null} [sender] MsgPrepay sender
+                 * @property {string|null} [beneficiary] MsgPrepay beneficiary
+                 * @property {Array.<cosmos.base.v1beta1.ICoin>|null} [amount] MsgPrepay amount
+                 */
+
+                /**
+                 * Constructs a new MsgPrepay.
+                 * @memberof stratos.sds.v1
+                 * @classdesc Represents a MsgPrepay.
+                 * @implements IMsgPrepay
+                 * @constructor
+                 * @param {stratos.sds.v1.IMsgPrepay=} [properties] Properties to set
+                 */
+                function MsgPrepay(properties) {
+                    this.amount = [];
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+
+                /**
+                 * MsgPrepay sender.
+                 * @member {string} sender
+                 * @memberof stratos.sds.v1.MsgPrepay
+                 * @instance
+                 */
+                MsgPrepay.prototype.sender = "";
+
+                /**
+                 * MsgPrepay beneficiary.
+                 * @member {string} beneficiary
+                 * @memberof stratos.sds.v1.MsgPrepay
+                 * @instance
+                 */
+                MsgPrepay.prototype.beneficiary = "";
+
+                /**
+                 * MsgPrepay amount.
+                 * @member {Array.<cosmos.base.v1beta1.ICoin>} amount
+                 * @memberof stratos.sds.v1.MsgPrepay
+                 * @instance
+                 */
+                MsgPrepay.prototype.amount = $util.emptyArray;
+
+                /**
+                 * Creates a new MsgPrepay instance using the specified properties.
+                 * @function create
+                 * @memberof stratos.sds.v1.MsgPrepay
+                 * @static
+                 * @param {stratos.sds.v1.IMsgPrepay=} [properties] Properties to set
+                 * @returns {stratos.sds.v1.MsgPrepay} MsgPrepay instance
+                 */
+                MsgPrepay.create = function create(properties) {
+                    return new MsgPrepay(properties);
+                };
+
+                /**
+                 * Encodes the specified MsgPrepay message. Does not implicitly {@link stratos.sds.v1.MsgPrepay.verify|verify} messages.
+                 * @function encode
+                 * @memberof stratos.sds.v1.MsgPrepay
+                 * @static
+                 * @param {stratos.sds.v1.IMsgPrepay} message MsgPrepay message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                MsgPrepay.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.sender != null && Object.hasOwnProperty.call(message, "sender"))
+                        writer.uint32(/* id 1, wireType 2 =*/10).string(message.sender);
+                    if (message.beneficiary != null && Object.hasOwnProperty.call(message, "beneficiary"))
+                        writer.uint32(/* id 2, wireType 2 =*/18).string(message.beneficiary);
+                    if (message.amount != null && message.amount.length)
+                        for (var i = 0; i < message.amount.length; ++i)
+                            $root.cosmos.base.v1beta1.Coin.encode(message.amount[i], writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                    return writer;
+                };
+
+                /**
+                 * Encodes the specified MsgPrepay message, length delimited. Does not implicitly {@link stratos.sds.v1.MsgPrepay.verify|verify} messages.
+                 * @function encodeDelimited
+                 * @memberof stratos.sds.v1.MsgPrepay
+                 * @static
+                 * @param {stratos.sds.v1.IMsgPrepay} message MsgPrepay message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                MsgPrepay.encodeDelimited = function encodeDelimited(message, writer) {
+                    return this.encode(message, writer).ldelim();
+                };
+
+                /**
+                 * Decodes a MsgPrepay message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof stratos.sds.v1.MsgPrepay
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {stratos.sds.v1.MsgPrepay} MsgPrepay
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                MsgPrepay.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.stratos.sds.v1.MsgPrepay();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 1:
+                            message.sender = reader.string();
+                            break;
+                        case 2:
+                            message.beneficiary = reader.string();
+                            break;
+                        case 3:
+                            if (!(message.amount && message.amount.length))
+                                message.amount = [];
+                            message.amount.push($root.cosmos.base.v1beta1.Coin.decode(reader, reader.uint32()));
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+
+                /**
+                 * Decodes a MsgPrepay message from the specified reader or buffer, length delimited.
+                 * @function decodeDelimited
+                 * @memberof stratos.sds.v1.MsgPrepay
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @returns {stratos.sds.v1.MsgPrepay} MsgPrepay
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                MsgPrepay.decodeDelimited = function decodeDelimited(reader) {
+                    if (!(reader instanceof $Reader))
+                        reader = new $Reader(reader);
+                    return this.decode(reader, reader.uint32());
+                };
+
+                /**
+                 * Verifies a MsgPrepay message.
+                 * @function verify
+                 * @memberof stratos.sds.v1.MsgPrepay
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                MsgPrepay.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    if (message.sender != null && message.hasOwnProperty("sender"))
+                        if (!$util.isString(message.sender))
+                            return "sender: string expected";
+                    if (message.beneficiary != null && message.hasOwnProperty("beneficiary"))
+                        if (!$util.isString(message.beneficiary))
+                            return "beneficiary: string expected";
+                    if (message.amount != null && message.hasOwnProperty("amount")) {
+                        if (!Array.isArray(message.amount))
+                            return "amount: array expected";
+                        for (var i = 0; i < message.amount.length; ++i) {
+                            var error = $root.cosmos.base.v1beta1.Coin.verify(message.amount[i]);
+                            if (error)
+                                return "amount." + error;
+                        }
+                    }
+                    return null;
+                };
+
+                /**
+                 * Creates a MsgPrepay message from a plain object. Also converts values to their respective internal types.
+                 * @function fromObject
+                 * @memberof stratos.sds.v1.MsgPrepay
+                 * @static
+                 * @param {Object.<string,*>} object Plain object
+                 * @returns {stratos.sds.v1.MsgPrepay} MsgPrepay
+                 */
+                MsgPrepay.fromObject = function fromObject(object) {
+                    if (object instanceof $root.stratos.sds.v1.MsgPrepay)
+                        return object;
+                    var message = new $root.stratos.sds.v1.MsgPrepay();
+                    if (object.sender != null)
+                        message.sender = String(object.sender);
+                    if (object.beneficiary != null)
+                        message.beneficiary = String(object.beneficiary);
+                    if (object.amount) {
+                        if (!Array.isArray(object.amount))
+                            throw TypeError(".stratos.sds.v1.MsgPrepay.amount: array expected");
+                        message.amount = [];
+                        for (var i = 0; i < object.amount.length; ++i) {
+                            if (typeof object.amount[i] !== "object")
+                                throw TypeError(".stratos.sds.v1.MsgPrepay.amount: object expected");
+                            message.amount[i] = $root.cosmos.base.v1beta1.Coin.fromObject(object.amount[i]);
+                        }
+                    }
+                    return message;
+                };
+
+                /**
+                 * Creates a plain object from a MsgPrepay message. Also converts values to other types if specified.
+                 * @function toObject
+                 * @memberof stratos.sds.v1.MsgPrepay
+                 * @static
+                 * @param {stratos.sds.v1.MsgPrepay} message MsgPrepay
+                 * @param {$protobuf.IConversionOptions} [options] Conversion options
+                 * @returns {Object.<string,*>} Plain object
+                 */
+                MsgPrepay.toObject = function toObject(message, options) {
+                    if (!options)
+                        options = {};
+                    var object = {};
+                    if (options.arrays || options.defaults)
+                        object.amount = [];
+                    if (options.defaults) {
+                        object.sender = "";
+                        object.beneficiary = "";
+                    }
+                    if (message.sender != null && message.hasOwnProperty("sender"))
+                        object.sender = message.sender;
+                    if (message.beneficiary != null && message.hasOwnProperty("beneficiary"))
+                        object.beneficiary = message.beneficiary;
+                    if (message.amount && message.amount.length) {
+                        object.amount = [];
+                        for (var j = 0; j < message.amount.length; ++j)
+                            object.amount[j] = $root.cosmos.base.v1beta1.Coin.toObject(message.amount[j], options);
+                    }
+                    return object;
+                };
+
+                /**
+                 * Converts this MsgPrepay to JSON.
+                 * @function toJSON
+                 * @memberof stratos.sds.v1.MsgPrepay
+                 * @instance
+                 * @returns {Object.<string,*>} JSON object
+                 */
+                MsgPrepay.prototype.toJSON = function toJSON() {
+                    return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                };
+
+                return MsgPrepay;
             })();
 
             v1.MsgPrepayResponse = (function() {
