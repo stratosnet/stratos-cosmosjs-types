@@ -30,3 +30,4 @@ message FileInfo {
   string          reporter = 2;
   string          uploader = 3;
 }
+
