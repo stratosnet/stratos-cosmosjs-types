@@ -12,7 +12,7 @@
     "lint": "eslint src --ext .js,.jsx,.ts,.tsx",
     "proto:build:o": "proto:build:files",
     "proto:build": "yarn proto:build:files; yarn proto:build:dist",
-    "proto:build:files": "cd ./src/proto/stratos/sds/v1/; pbjs -t static-module  -w commonjs -o sdsBundle.js sds.proto genesis.proto query.js tx.proto ../../crypto/v1/ethsecp256k1/keys.proto ; pbts -o sdsBundle.d.ts sdsBundle.js; cd ../../../../",
+    "proto:build:files": "cd ./src/proto/stratos/sds/v1/; pbjs -t static-module  -w commonjs -o sdsBundle.js coin.proto sds.proto genesis.proto query.js tx.proto ../../crypto/v1/ethsecp256k1/keys.proto ; pbts -o sdsBundle.d.ts sdsBundle.js; cd ../../../../",
     "proto:build:dist": " cp ./src/proto/stratos/sds/v1/sdsBundle*.* ./dist/; rm -rf ./src/proto/stratos/sds/v1/sdsBundle*.*"
   },
   "lint-staged": {
