@@ -1745,6 +1745,2049 @@ $root.stratos = (function() {
                 return GenesisFileInfo;
             })();
 
+            v1.Query = (function() {
+
+                /**
+                 * Constructs a new Query service.
+                 * @memberof stratos.sds.v1
+                 * @classdesc Represents a Query
+                 * @extends $protobuf.rpc.Service
+                 * @constructor
+                 * @param {$protobuf.RPCImpl} rpcImpl RPC implementation
+                 * @param {boolean} [requestDelimited=false] Whether requests are length-delimited
+                 * @param {boolean} [responseDelimited=false] Whether responses are length-delimited
+                 */
+                function Query(rpcImpl, requestDelimited, responseDelimited) {
+                    $protobuf.rpc.Service.call(this, rpcImpl, requestDelimited, responseDelimited);
+                }
+
+                (Query.prototype = Object.create($protobuf.rpc.Service.prototype)).constructor = Query;
+
+                /**
+                 * Creates new Query service using the specified rpc implementation.
+                 * @function create
+                 * @memberof stratos.sds.v1.Query
+                 * @static
+                 * @param {$protobuf.RPCImpl} rpcImpl RPC implementation
+                 * @param {boolean} [requestDelimited=false] Whether requests are length-delimited
+                 * @param {boolean} [responseDelimited=false] Whether responses are length-delimited
+                 * @returns {Query} RPC service. Useful where requests and/or responses are streamed.
+                 */
+                Query.create = function create(rpcImpl, requestDelimited, responseDelimited) {
+                    return new this(rpcImpl, requestDelimited, responseDelimited);
+                };
+
+                /**
+                 * Callback as used by {@link stratos.sds.v1.Query#fileupload}.
+                 * @memberof stratos.sds.v1.Query
+                 * @typedef FileuploadCallback
+                 * @type {function}
+                 * @param {Error|null} error Error, if any
+                 * @param {stratos.sds.v1.QueryFileUploadResponse} [response] QueryFileUploadResponse
+                 */
+
+                /**
+                 * Calls Fileupload.
+                 * @function fileupload
+                 * @memberof stratos.sds.v1.Query
+                 * @instance
+                 * @param {stratos.sds.v1.IQueryFileUploadRequest} request QueryFileUploadRequest message or plain object
+                 * @param {stratos.sds.v1.Query.FileuploadCallback} callback Node-style callback called with the error, if any, and QueryFileUploadResponse
+                 * @returns {undefined}
+                 * @variation 1
+                 */
+                Object.defineProperty(Query.prototype.fileupload = function fileupload(request, callback) {
+                    return this.rpcCall(fileupload, $root.stratos.sds.v1.QueryFileUploadRequest, $root.stratos.sds.v1.QueryFileUploadResponse, request, callback);
+                }, "name", { value: "Fileupload" });
+
+                /**
+                 * Calls Fileupload.
+                 * @function fileupload
+                 * @memberof stratos.sds.v1.Query
+                 * @instance
+                 * @param {stratos.sds.v1.IQueryFileUploadRequest} request QueryFileUploadRequest message or plain object
+                 * @returns {Promise<stratos.sds.v1.QueryFileUploadResponse>} Promise
+                 * @variation 2
+                 */
+
+                /**
+                 * Callback as used by {@link stratos.sds.v1.Query#simPrepay}.
+                 * @memberof stratos.sds.v1.Query
+                 * @typedef SimPrepayCallback
+                 * @type {function}
+                 * @param {Error|null} error Error, if any
+                 * @param {stratos.sds.v1.QuerySimPrepayResponse} [response] QuerySimPrepayResponse
+                 */
+
+                /**
+                 * Calls SimPrepay.
+                 * @function simPrepay
+                 * @memberof stratos.sds.v1.Query
+                 * @instance
+                 * @param {stratos.sds.v1.IQuerySimPrepayRequest} request QuerySimPrepayRequest message or plain object
+                 * @param {stratos.sds.v1.Query.SimPrepayCallback} callback Node-style callback called with the error, if any, and QuerySimPrepayResponse
+                 * @returns {undefined}
+                 * @variation 1
+                 */
+                Object.defineProperty(Query.prototype.simPrepay = function simPrepay(request, callback) {
+                    return this.rpcCall(simPrepay, $root.stratos.sds.v1.QuerySimPrepayRequest, $root.stratos.sds.v1.QuerySimPrepayResponse, request, callback);
+                }, "name", { value: "SimPrepay" });
+
+                /**
+                 * Calls SimPrepay.
+                 * @function simPrepay
+                 * @memberof stratos.sds.v1.Query
+                 * @instance
+                 * @param {stratos.sds.v1.IQuerySimPrepayRequest} request QuerySimPrepayRequest message or plain object
+                 * @returns {Promise<stratos.sds.v1.QuerySimPrepayResponse>} Promise
+                 * @variation 2
+                 */
+
+                /**
+                 * Callback as used by {@link stratos.sds.v1.Query#nozPrice}.
+                 * @memberof stratos.sds.v1.Query
+                 * @typedef NozPriceCallback
+                 * @type {function}
+                 * @param {Error|null} error Error, if any
+                 * @param {stratos.sds.v1.QueryNozPriceResponse} [response] QueryNozPriceResponse
+                 */
+
+                /**
+                 * Calls NozPrice.
+                 * @function nozPrice
+                 * @memberof stratos.sds.v1.Query
+                 * @instance
+                 * @param {stratos.sds.v1.IQueryNozPriceRequest} request QueryNozPriceRequest message or plain object
+                 * @param {stratos.sds.v1.Query.NozPriceCallback} callback Node-style callback called with the error, if any, and QueryNozPriceResponse
+                 * @returns {undefined}
+                 * @variation 1
+                 */
+                Object.defineProperty(Query.prototype.nozPrice = function nozPrice(request, callback) {
+                    return this.rpcCall(nozPrice, $root.stratos.sds.v1.QueryNozPriceRequest, $root.stratos.sds.v1.QueryNozPriceResponse, request, callback);
+                }, "name", { value: "NozPrice" });
+
+                /**
+                 * Calls NozPrice.
+                 * @function nozPrice
+                 * @memberof stratos.sds.v1.Query
+                 * @instance
+                 * @param {stratos.sds.v1.IQueryNozPriceRequest} request QueryNozPriceRequest message or plain object
+                 * @returns {Promise<stratos.sds.v1.QueryNozPriceResponse>} Promise
+                 * @variation 2
+                 */
+
+                /**
+                 * Callback as used by {@link stratos.sds.v1.Query#nozSupply}.
+                 * @memberof stratos.sds.v1.Query
+                 * @typedef NozSupplyCallback
+                 * @type {function}
+                 * @param {Error|null} error Error, if any
+                 * @param {stratos.sds.v1.QueryNozSupplyResponse} [response] QueryNozSupplyResponse
+                 */
+
+                /**
+                 * Calls NozSupply.
+                 * @function nozSupply
+                 * @memberof stratos.sds.v1.Query
+                 * @instance
+                 * @param {stratos.sds.v1.IQueryNozSupplyRequest} request QueryNozSupplyRequest message or plain object
+                 * @param {stratos.sds.v1.Query.NozSupplyCallback} callback Node-style callback called with the error, if any, and QueryNozSupplyResponse
+                 * @returns {undefined}
+                 * @variation 1
+                 */
+                Object.defineProperty(Query.prototype.nozSupply = function nozSupply(request, callback) {
+                    return this.rpcCall(nozSupply, $root.stratos.sds.v1.QueryNozSupplyRequest, $root.stratos.sds.v1.QueryNozSupplyResponse, request, callback);
+                }, "name", { value: "NozSupply" });
+
+                /**
+                 * Calls NozSupply.
+                 * @function nozSupply
+                 * @memberof stratos.sds.v1.Query
+                 * @instance
+                 * @param {stratos.sds.v1.IQueryNozSupplyRequest} request QueryNozSupplyRequest message or plain object
+                 * @returns {Promise<stratos.sds.v1.QueryNozSupplyResponse>} Promise
+                 * @variation 2
+                 */
+
+                /**
+                 * Callback as used by {@link stratos.sds.v1.Query#params}.
+                 * @memberof stratos.sds.v1.Query
+                 * @typedef ParamsCallback
+                 * @type {function}
+                 * @param {Error|null} error Error, if any
+                 * @param {stratos.sds.v1.QueryParamsResponse} [response] QueryParamsResponse
+                 */
+
+                /**
+                 * Calls Params.
+                 * @function params
+                 * @memberof stratos.sds.v1.Query
+                 * @instance
+                 * @param {stratos.sds.v1.IQueryParamsRequest} request QueryParamsRequest message or plain object
+                 * @param {stratos.sds.v1.Query.ParamsCallback} callback Node-style callback called with the error, if any, and QueryParamsResponse
+                 * @returns {undefined}
+                 * @variation 1
+                 */
+                Object.defineProperty(Query.prototype.params = function params(request, callback) {
+                    return this.rpcCall(params, $root.stratos.sds.v1.QueryParamsRequest, $root.stratos.sds.v1.QueryParamsResponse, request, callback);
+                }, "name", { value: "Params" });
+
+                /**
+                 * Calls Params.
+                 * @function params
+                 * @memberof stratos.sds.v1.Query
+                 * @instance
+                 * @param {stratos.sds.v1.IQueryParamsRequest} request QueryParamsRequest message or plain object
+                 * @returns {Promise<stratos.sds.v1.QueryParamsResponse>} Promise
+                 * @variation 2
+                 */
+
+                return Query;
+            })();
+
+            v1.QueryFileUploadRequest = (function() {
+
+                /**
+                 * Properties of a QueryFileUploadRequest.
+                 * @memberof stratos.sds.v1
+                 * @interface IQueryFileUploadRequest
+                 * @property {string|null} [fileHash] QueryFileUploadRequest fileHash
+                 */
+
+                /**
+                 * Constructs a new QueryFileUploadRequest.
+                 * @memberof stratos.sds.v1
+                 * @classdesc Represents a QueryFileUploadRequest.
+                 * @implements IQueryFileUploadRequest
+                 * @constructor
+                 * @param {stratos.sds.v1.IQueryFileUploadRequest=} [properties] Properties to set
+                 */
+                function QueryFileUploadRequest(properties) {
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+
+                /**
+                 * QueryFileUploadRequest fileHash.
+                 * @member {string} fileHash
+                 * @memberof stratos.sds.v1.QueryFileUploadRequest
+                 * @instance
+                 */
+                QueryFileUploadRequest.prototype.fileHash = "";
+
+                /**
+                 * Creates a new QueryFileUploadRequest instance using the specified properties.
+                 * @function create
+                 * @memberof stratos.sds.v1.QueryFileUploadRequest
+                 * @static
+                 * @param {stratos.sds.v1.IQueryFileUploadRequest=} [properties] Properties to set
+                 * @returns {stratos.sds.v1.QueryFileUploadRequest} QueryFileUploadRequest instance
+                 */
+                QueryFileUploadRequest.create = function create(properties) {
+                    return new QueryFileUploadRequest(properties);
+                };
+
+                /**
+                 * Encodes the specified QueryFileUploadRequest message. Does not implicitly {@link stratos.sds.v1.QueryFileUploadRequest.verify|verify} messages.
+                 * @function encode
+                 * @memberof stratos.sds.v1.QueryFileUploadRequest
+                 * @static
+                 * @param {stratos.sds.v1.IQueryFileUploadRequest} message QueryFileUploadRequest message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                QueryFileUploadRequest.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.fileHash != null && Object.hasOwnProperty.call(message, "fileHash"))
+                        writer.uint32(/* id 1, wireType 2 =*/10).string(message.fileHash);
+                    return writer;
+                };
+
+                /**
+                 * Encodes the specified QueryFileUploadRequest message, length delimited. Does not implicitly {@link stratos.sds.v1.QueryFileUploadRequest.verify|verify} messages.
+                 * @function encodeDelimited
+                 * @memberof stratos.sds.v1.QueryFileUploadRequest
+                 * @static
+                 * @param {stratos.sds.v1.IQueryFileUploadRequest} message QueryFileUploadRequest message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                QueryFileUploadRequest.encodeDelimited = function encodeDelimited(message, writer) {
+                    return this.encode(message, writer).ldelim();
+                };
+
+                /**
+                 * Decodes a QueryFileUploadRequest message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof stratos.sds.v1.QueryFileUploadRequest
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {stratos.sds.v1.QueryFileUploadRequest} QueryFileUploadRequest
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                QueryFileUploadRequest.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.stratos.sds.v1.QueryFileUploadRequest();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 1:
+                            message.fileHash = reader.string();
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+
+                /**
+                 * Decodes a QueryFileUploadRequest message from the specified reader or buffer, length delimited.
+                 * @function decodeDelimited
+                 * @memberof stratos.sds.v1.QueryFileUploadRequest
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @returns {stratos.sds.v1.QueryFileUploadRequest} QueryFileUploadRequest
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                QueryFileUploadRequest.decodeDelimited = function decodeDelimited(reader) {
+                    if (!(reader instanceof $Reader))
+                        reader = new $Reader(reader);
+                    return this.decode(reader, reader.uint32());
+                };
+
+                /**
+                 * Verifies a QueryFileUploadRequest message.
+                 * @function verify
+                 * @memberof stratos.sds.v1.QueryFileUploadRequest
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                QueryFileUploadRequest.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    if (message.fileHash != null && message.hasOwnProperty("fileHash"))
+                        if (!$util.isString(message.fileHash))
+                            return "fileHash: string expected";
+                    return null;
+                };
+
+                /**
+                 * Creates a QueryFileUploadRequest message from a plain object. Also converts values to their respective internal types.
+                 * @function fromObject
+                 * @memberof stratos.sds.v1.QueryFileUploadRequest
+                 * @static
+                 * @param {Object.<string,*>} object Plain object
+                 * @returns {stratos.sds.v1.QueryFileUploadRequest} QueryFileUploadRequest
+                 */
+                QueryFileUploadRequest.fromObject = function fromObject(object) {
+                    if (object instanceof $root.stratos.sds.v1.QueryFileUploadRequest)
+                        return object;
+                    var message = new $root.stratos.sds.v1.QueryFileUploadRequest();
+                    if (object.fileHash != null)
+                        message.fileHash = String(object.fileHash);
+                    return message;
+                };
+
+                /**
+                 * Creates a plain object from a QueryFileUploadRequest message. Also converts values to other types if specified.
+                 * @function toObject
+                 * @memberof stratos.sds.v1.QueryFileUploadRequest
+                 * @static
+                 * @param {stratos.sds.v1.QueryFileUploadRequest} message QueryFileUploadRequest
+                 * @param {$protobuf.IConversionOptions} [options] Conversion options
+                 * @returns {Object.<string,*>} Plain object
+                 */
+                QueryFileUploadRequest.toObject = function toObject(message, options) {
+                    if (!options)
+                        options = {};
+                    var object = {};
+                    if (options.defaults)
+                        object.fileHash = "";
+                    if (message.fileHash != null && message.hasOwnProperty("fileHash"))
+                        object.fileHash = message.fileHash;
+                    return object;
+                };
+
+                /**
+                 * Converts this QueryFileUploadRequest to JSON.
+                 * @function toJSON
+                 * @memberof stratos.sds.v1.QueryFileUploadRequest
+                 * @instance
+                 * @returns {Object.<string,*>} JSON object
+                 */
+                QueryFileUploadRequest.prototype.toJSON = function toJSON() {
+                    return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                };
+
+                return QueryFileUploadRequest;
+            })();
+
+            v1.QueryFileUploadResponse = (function() {
+
+                /**
+                 * Properties of a QueryFileUploadResponse.
+                 * @memberof stratos.sds.v1
+                 * @interface IQueryFileUploadResponse
+                 * @property {stratos.sds.v1.IFileInfo|null} [fileInfo] QueryFileUploadResponse fileInfo
+                 */
+
+                /**
+                 * Constructs a new QueryFileUploadResponse.
+                 * @memberof stratos.sds.v1
+                 * @classdesc Represents a QueryFileUploadResponse.
+                 * @implements IQueryFileUploadResponse
+                 * @constructor
+                 * @param {stratos.sds.v1.IQueryFileUploadResponse=} [properties] Properties to set
+                 */
+                function QueryFileUploadResponse(properties) {
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+
+                /**
+                 * QueryFileUploadResponse fileInfo.
+                 * @member {stratos.sds.v1.IFileInfo|null|undefined} fileInfo
+                 * @memberof stratos.sds.v1.QueryFileUploadResponse
+                 * @instance
+                 */
+                QueryFileUploadResponse.prototype.fileInfo = null;
+
+                /**
+                 * Creates a new QueryFileUploadResponse instance using the specified properties.
+                 * @function create
+                 * @memberof stratos.sds.v1.QueryFileUploadResponse
+                 * @static
+                 * @param {stratos.sds.v1.IQueryFileUploadResponse=} [properties] Properties to set
+                 * @returns {stratos.sds.v1.QueryFileUploadResponse} QueryFileUploadResponse instance
+                 */
+                QueryFileUploadResponse.create = function create(properties) {
+                    return new QueryFileUploadResponse(properties);
+                };
+
+                /**
+                 * Encodes the specified QueryFileUploadResponse message. Does not implicitly {@link stratos.sds.v1.QueryFileUploadResponse.verify|verify} messages.
+                 * @function encode
+                 * @memberof stratos.sds.v1.QueryFileUploadResponse
+                 * @static
+                 * @param {stratos.sds.v1.IQueryFileUploadResponse} message QueryFileUploadResponse message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                QueryFileUploadResponse.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.fileInfo != null && Object.hasOwnProperty.call(message, "fileInfo"))
+                        $root.stratos.sds.v1.FileInfo.encode(message.fileInfo, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                    return writer;
+                };
+
+                /**
+                 * Encodes the specified QueryFileUploadResponse message, length delimited. Does not implicitly {@link stratos.sds.v1.QueryFileUploadResponse.verify|verify} messages.
+                 * @function encodeDelimited
+                 * @memberof stratos.sds.v1.QueryFileUploadResponse
+                 * @static
+                 * @param {stratos.sds.v1.IQueryFileUploadResponse} message QueryFileUploadResponse message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                QueryFileUploadResponse.encodeDelimited = function encodeDelimited(message, writer) {
+                    return this.encode(message, writer).ldelim();
+                };
+
+                /**
+                 * Decodes a QueryFileUploadResponse message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof stratos.sds.v1.QueryFileUploadResponse
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {stratos.sds.v1.QueryFileUploadResponse} QueryFileUploadResponse
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                QueryFileUploadResponse.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.stratos.sds.v1.QueryFileUploadResponse();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 1:
+                            message.fileInfo = $root.stratos.sds.v1.FileInfo.decode(reader, reader.uint32());
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+
+                /**
+                 * Decodes a QueryFileUploadResponse message from the specified reader or buffer, length delimited.
+                 * @function decodeDelimited
+                 * @memberof stratos.sds.v1.QueryFileUploadResponse
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @returns {stratos.sds.v1.QueryFileUploadResponse} QueryFileUploadResponse
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                QueryFileUploadResponse.decodeDelimited = function decodeDelimited(reader) {
+                    if (!(reader instanceof $Reader))
+                        reader = new $Reader(reader);
+                    return this.decode(reader, reader.uint32());
+                };
+
+                /**
+                 * Verifies a QueryFileUploadResponse message.
+                 * @function verify
+                 * @memberof stratos.sds.v1.QueryFileUploadResponse
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                QueryFileUploadResponse.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    if (message.fileInfo != null && message.hasOwnProperty("fileInfo")) {
+                        var error = $root.stratos.sds.v1.FileInfo.verify(message.fileInfo);
+                        if (error)
+                            return "fileInfo." + error;
+                    }
+                    return null;
+                };
+
+                /**
+                 * Creates a QueryFileUploadResponse message from a plain object. Also converts values to their respective internal types.
+                 * @function fromObject
+                 * @memberof stratos.sds.v1.QueryFileUploadResponse
+                 * @static
+                 * @param {Object.<string,*>} object Plain object
+                 * @returns {stratos.sds.v1.QueryFileUploadResponse} QueryFileUploadResponse
+                 */
+                QueryFileUploadResponse.fromObject = function fromObject(object) {
+                    if (object instanceof $root.stratos.sds.v1.QueryFileUploadResponse)
+                        return object;
+                    var message = new $root.stratos.sds.v1.QueryFileUploadResponse();
+                    if (object.fileInfo != null) {
+                        if (typeof object.fileInfo !== "object")
+                            throw TypeError(".stratos.sds.v1.QueryFileUploadResponse.fileInfo: object expected");
+                        message.fileInfo = $root.stratos.sds.v1.FileInfo.fromObject(object.fileInfo);
+                    }
+                    return message;
+                };
+
+                /**
+                 * Creates a plain object from a QueryFileUploadResponse message. Also converts values to other types if specified.
+                 * @function toObject
+                 * @memberof stratos.sds.v1.QueryFileUploadResponse
+                 * @static
+                 * @param {stratos.sds.v1.QueryFileUploadResponse} message QueryFileUploadResponse
+                 * @param {$protobuf.IConversionOptions} [options] Conversion options
+                 * @returns {Object.<string,*>} Plain object
+                 */
+                QueryFileUploadResponse.toObject = function toObject(message, options) {
+                    if (!options)
+                        options = {};
+                    var object = {};
+                    if (options.defaults)
+                        object.fileInfo = null;
+                    if (message.fileInfo != null && message.hasOwnProperty("fileInfo"))
+                        object.fileInfo = $root.stratos.sds.v1.FileInfo.toObject(message.fileInfo, options);
+                    return object;
+                };
+
+                /**
+                 * Converts this QueryFileUploadResponse to JSON.
+                 * @function toJSON
+                 * @memberof stratos.sds.v1.QueryFileUploadResponse
+                 * @instance
+                 * @returns {Object.<string,*>} JSON object
+                 */
+                QueryFileUploadResponse.prototype.toJSON = function toJSON() {
+                    return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                };
+
+                return QueryFileUploadResponse;
+            })();
+
+            v1.QuerySimPrepayRequest = (function() {
+
+                /**
+                 * Properties of a QuerySimPrepayRequest.
+                 * @memberof stratos.sds.v1
+                 * @interface IQuerySimPrepayRequest
+                 * @property {Array.<cosmos.base.v1beta1.ICoin>|null} [amount] QuerySimPrepayRequest amount
+                 */
+
+                /**
+                 * Constructs a new QuerySimPrepayRequest.
+                 * @memberof stratos.sds.v1
+                 * @classdesc Represents a QuerySimPrepayRequest.
+                 * @implements IQuerySimPrepayRequest
+                 * @constructor
+                 * @param {stratos.sds.v1.IQuerySimPrepayRequest=} [properties] Properties to set
+                 */
+                function QuerySimPrepayRequest(properties) {
+                    this.amount = [];
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+
+                /**
+                 * QuerySimPrepayRequest amount.
+                 * @member {Array.<cosmos.base.v1beta1.ICoin>} amount
+                 * @memberof stratos.sds.v1.QuerySimPrepayRequest
+                 * @instance
+                 */
+                QuerySimPrepayRequest.prototype.amount = $util.emptyArray;
+
+                /**
+                 * Creates a new QuerySimPrepayRequest instance using the specified properties.
+                 * @function create
+                 * @memberof stratos.sds.v1.QuerySimPrepayRequest
+                 * @static
+                 * @param {stratos.sds.v1.IQuerySimPrepayRequest=} [properties] Properties to set
+                 * @returns {stratos.sds.v1.QuerySimPrepayRequest} QuerySimPrepayRequest instance
+                 */
+                QuerySimPrepayRequest.create = function create(properties) {
+                    return new QuerySimPrepayRequest(properties);
+                };
+
+                /**
+                 * Encodes the specified QuerySimPrepayRequest message. Does not implicitly {@link stratos.sds.v1.QuerySimPrepayRequest.verify|verify} messages.
+                 * @function encode
+                 * @memberof stratos.sds.v1.QuerySimPrepayRequest
+                 * @static
+                 * @param {stratos.sds.v1.IQuerySimPrepayRequest} message QuerySimPrepayRequest message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                QuerySimPrepayRequest.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.amount != null && message.amount.length)
+                        for (var i = 0; i < message.amount.length; ++i)
+                            $root.cosmos.base.v1beta1.Coin.encode(message.amount[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                    return writer;
+                };
+
+                /**
+                 * Encodes the specified QuerySimPrepayRequest message, length delimited. Does not implicitly {@link stratos.sds.v1.QuerySimPrepayRequest.verify|verify} messages.
+                 * @function encodeDelimited
+                 * @memberof stratos.sds.v1.QuerySimPrepayRequest
+                 * @static
+                 * @param {stratos.sds.v1.IQuerySimPrepayRequest} message QuerySimPrepayRequest message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                QuerySimPrepayRequest.encodeDelimited = function encodeDelimited(message, writer) {
+                    return this.encode(message, writer).ldelim();
+                };
+
+                /**
+                 * Decodes a QuerySimPrepayRequest message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof stratos.sds.v1.QuerySimPrepayRequest
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {stratos.sds.v1.QuerySimPrepayRequest} QuerySimPrepayRequest
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                QuerySimPrepayRequest.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.stratos.sds.v1.QuerySimPrepayRequest();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 1:
+                            if (!(message.amount && message.amount.length))
+                                message.amount = [];
+                            message.amount.push($root.cosmos.base.v1beta1.Coin.decode(reader, reader.uint32()));
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+
+                /**
+                 * Decodes a QuerySimPrepayRequest message from the specified reader or buffer, length delimited.
+                 * @function decodeDelimited
+                 * @memberof stratos.sds.v1.QuerySimPrepayRequest
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @returns {stratos.sds.v1.QuerySimPrepayRequest} QuerySimPrepayRequest
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                QuerySimPrepayRequest.decodeDelimited = function decodeDelimited(reader) {
+                    if (!(reader instanceof $Reader))
+                        reader = new $Reader(reader);
+                    return this.decode(reader, reader.uint32());
+                };
+
+                /**
+                 * Verifies a QuerySimPrepayRequest message.
+                 * @function verify
+                 * @memberof stratos.sds.v1.QuerySimPrepayRequest
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                QuerySimPrepayRequest.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    if (message.amount != null && message.hasOwnProperty("amount")) {
+                        if (!Array.isArray(message.amount))
+                            return "amount: array expected";
+                        for (var i = 0; i < message.amount.length; ++i) {
+                            var error = $root.cosmos.base.v1beta1.Coin.verify(message.amount[i]);
+                            if (error)
+                                return "amount." + error;
+                        }
+                    }
+                    return null;
+                };
+
+                /**
+                 * Creates a QuerySimPrepayRequest message from a plain object. Also converts values to their respective internal types.
+                 * @function fromObject
+                 * @memberof stratos.sds.v1.QuerySimPrepayRequest
+                 * @static
+                 * @param {Object.<string,*>} object Plain object
+                 * @returns {stratos.sds.v1.QuerySimPrepayRequest} QuerySimPrepayRequest
+                 */
+                QuerySimPrepayRequest.fromObject = function fromObject(object) {
+                    if (object instanceof $root.stratos.sds.v1.QuerySimPrepayRequest)
+                        return object;
+                    var message = new $root.stratos.sds.v1.QuerySimPrepayRequest();
+                    if (object.amount) {
+                        if (!Array.isArray(object.amount))
+                            throw TypeError(".stratos.sds.v1.QuerySimPrepayRequest.amount: array expected");
+                        message.amount = [];
+                        for (var i = 0; i < object.amount.length; ++i) {
+                            if (typeof object.amount[i] !== "object")
+                                throw TypeError(".stratos.sds.v1.QuerySimPrepayRequest.amount: object expected");
+                            message.amount[i] = $root.cosmos.base.v1beta1.Coin.fromObject(object.amount[i]);
+                        }
+                    }
+                    return message;
+                };
+
+                /**
+                 * Creates a plain object from a QuerySimPrepayRequest message. Also converts values to other types if specified.
+                 * @function toObject
+                 * @memberof stratos.sds.v1.QuerySimPrepayRequest
+                 * @static
+                 * @param {stratos.sds.v1.QuerySimPrepayRequest} message QuerySimPrepayRequest
+                 * @param {$protobuf.IConversionOptions} [options] Conversion options
+                 * @returns {Object.<string,*>} Plain object
+                 */
+                QuerySimPrepayRequest.toObject = function toObject(message, options) {
+                    if (!options)
+                        options = {};
+                    var object = {};
+                    if (options.arrays || options.defaults)
+                        object.amount = [];
+                    if (message.amount && message.amount.length) {
+                        object.amount = [];
+                        for (var j = 0; j < message.amount.length; ++j)
+                            object.amount[j] = $root.cosmos.base.v1beta1.Coin.toObject(message.amount[j], options);
+                    }
+                    return object;
+                };
+
+                /**
+                 * Converts this QuerySimPrepayRequest to JSON.
+                 * @function toJSON
+                 * @memberof stratos.sds.v1.QuerySimPrepayRequest
+                 * @instance
+                 * @returns {Object.<string,*>} JSON object
+                 */
+                QuerySimPrepayRequest.prototype.toJSON = function toJSON() {
+                    return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                };
+
+                return QuerySimPrepayRequest;
+            })();
+
+            v1.QuerySimPrepayResponse = (function() {
+
+                /**
+                 * Properties of a QuerySimPrepayResponse.
+                 * @memberof stratos.sds.v1
+                 * @interface IQuerySimPrepayResponse
+                 * @property {string|null} [noz] QuerySimPrepayResponse noz
+                 */
+
+                /**
+                 * Constructs a new QuerySimPrepayResponse.
+                 * @memberof stratos.sds.v1
+                 * @classdesc Represents a QuerySimPrepayResponse.
+                 * @implements IQuerySimPrepayResponse
+                 * @constructor
+                 * @param {stratos.sds.v1.IQuerySimPrepayResponse=} [properties] Properties to set
+                 */
+                function QuerySimPrepayResponse(properties) {
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+
+                /**
+                 * QuerySimPrepayResponse noz.
+                 * @member {string} noz
+                 * @memberof stratos.sds.v1.QuerySimPrepayResponse
+                 * @instance
+                 */
+                QuerySimPrepayResponse.prototype.noz = "";
+
+                /**
+                 * Creates a new QuerySimPrepayResponse instance using the specified properties.
+                 * @function create
+                 * @memberof stratos.sds.v1.QuerySimPrepayResponse
+                 * @static
+                 * @param {stratos.sds.v1.IQuerySimPrepayResponse=} [properties] Properties to set
+                 * @returns {stratos.sds.v1.QuerySimPrepayResponse} QuerySimPrepayResponse instance
+                 */
+                QuerySimPrepayResponse.create = function create(properties) {
+                    return new QuerySimPrepayResponse(properties);
+                };
+
+                /**
+                 * Encodes the specified QuerySimPrepayResponse message. Does not implicitly {@link stratos.sds.v1.QuerySimPrepayResponse.verify|verify} messages.
+                 * @function encode
+                 * @memberof stratos.sds.v1.QuerySimPrepayResponse
+                 * @static
+                 * @param {stratos.sds.v1.IQuerySimPrepayResponse} message QuerySimPrepayResponse message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                QuerySimPrepayResponse.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.noz != null && Object.hasOwnProperty.call(message, "noz"))
+                        writer.uint32(/* id 1, wireType 2 =*/10).string(message.noz);
+                    return writer;
+                };
+
+                /**
+                 * Encodes the specified QuerySimPrepayResponse message, length delimited. Does not implicitly {@link stratos.sds.v1.QuerySimPrepayResponse.verify|verify} messages.
+                 * @function encodeDelimited
+                 * @memberof stratos.sds.v1.QuerySimPrepayResponse
+                 * @static
+                 * @param {stratos.sds.v1.IQuerySimPrepayResponse} message QuerySimPrepayResponse message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                QuerySimPrepayResponse.encodeDelimited = function encodeDelimited(message, writer) {
+                    return this.encode(message, writer).ldelim();
+                };
+
+                /**
+                 * Decodes a QuerySimPrepayResponse message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof stratos.sds.v1.QuerySimPrepayResponse
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {stratos.sds.v1.QuerySimPrepayResponse} QuerySimPrepayResponse
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                QuerySimPrepayResponse.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.stratos.sds.v1.QuerySimPrepayResponse();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 1:
+                            message.noz = reader.string();
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+
+                /**
+                 * Decodes a QuerySimPrepayResponse message from the specified reader or buffer, length delimited.
+                 * @function decodeDelimited
+                 * @memberof stratos.sds.v1.QuerySimPrepayResponse
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @returns {stratos.sds.v1.QuerySimPrepayResponse} QuerySimPrepayResponse
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                QuerySimPrepayResponse.decodeDelimited = function decodeDelimited(reader) {
+                    if (!(reader instanceof $Reader))
+                        reader = new $Reader(reader);
+                    return this.decode(reader, reader.uint32());
+                };
+
+                /**
+                 * Verifies a QuerySimPrepayResponse message.
+                 * @function verify
+                 * @memberof stratos.sds.v1.QuerySimPrepayResponse
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                QuerySimPrepayResponse.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    if (message.noz != null && message.hasOwnProperty("noz"))
+                        if (!$util.isString(message.noz))
+                            return "noz: string expected";
+                    return null;
+                };
+
+                /**
+                 * Creates a QuerySimPrepayResponse message from a plain object. Also converts values to their respective internal types.
+                 * @function fromObject
+                 * @memberof stratos.sds.v1.QuerySimPrepayResponse
+                 * @static
+                 * @param {Object.<string,*>} object Plain object
+                 * @returns {stratos.sds.v1.QuerySimPrepayResponse} QuerySimPrepayResponse
+                 */
+                QuerySimPrepayResponse.fromObject = function fromObject(object) {
+                    if (object instanceof $root.stratos.sds.v1.QuerySimPrepayResponse)
+                        return object;
+                    var message = new $root.stratos.sds.v1.QuerySimPrepayResponse();
+                    if (object.noz != null)
+                        message.noz = String(object.noz);
+                    return message;
+                };
+
+                /**
+                 * Creates a plain object from a QuerySimPrepayResponse message. Also converts values to other types if specified.
+                 * @function toObject
+                 * @memberof stratos.sds.v1.QuerySimPrepayResponse
+                 * @static
+                 * @param {stratos.sds.v1.QuerySimPrepayResponse} message QuerySimPrepayResponse
+                 * @param {$protobuf.IConversionOptions} [options] Conversion options
+                 * @returns {Object.<string,*>} Plain object
+                 */
+                QuerySimPrepayResponse.toObject = function toObject(message, options) {
+                    if (!options)
+                        options = {};
+                    var object = {};
+                    if (options.defaults)
+                        object.noz = "";
+                    if (message.noz != null && message.hasOwnProperty("noz"))
+                        object.noz = message.noz;
+                    return object;
+                };
+
+                /**
+                 * Converts this QuerySimPrepayResponse to JSON.
+                 * @function toJSON
+                 * @memberof stratos.sds.v1.QuerySimPrepayResponse
+                 * @instance
+                 * @returns {Object.<string,*>} JSON object
+                 */
+                QuerySimPrepayResponse.prototype.toJSON = function toJSON() {
+                    return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                };
+
+                return QuerySimPrepayResponse;
+            })();
+
+            v1.QueryNozPriceRequest = (function() {
+
+                /**
+                 * Properties of a QueryNozPriceRequest.
+                 * @memberof stratos.sds.v1
+                 * @interface IQueryNozPriceRequest
+                 */
+
+                /**
+                 * Constructs a new QueryNozPriceRequest.
+                 * @memberof stratos.sds.v1
+                 * @classdesc Represents a QueryNozPriceRequest.
+                 * @implements IQueryNozPriceRequest
+                 * @constructor
+                 * @param {stratos.sds.v1.IQueryNozPriceRequest=} [properties] Properties to set
+                 */
+                function QueryNozPriceRequest(properties) {
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+
+                /**
+                 * Creates a new QueryNozPriceRequest instance using the specified properties.
+                 * @function create
+                 * @memberof stratos.sds.v1.QueryNozPriceRequest
+                 * @static
+                 * @param {stratos.sds.v1.IQueryNozPriceRequest=} [properties] Properties to set
+                 * @returns {stratos.sds.v1.QueryNozPriceRequest} QueryNozPriceRequest instance
+                 */
+                QueryNozPriceRequest.create = function create(properties) {
+                    return new QueryNozPriceRequest(properties);
+                };
+
+                /**
+                 * Encodes the specified QueryNozPriceRequest message. Does not implicitly {@link stratos.sds.v1.QueryNozPriceRequest.verify|verify} messages.
+                 * @function encode
+                 * @memberof stratos.sds.v1.QueryNozPriceRequest
+                 * @static
+                 * @param {stratos.sds.v1.IQueryNozPriceRequest} message QueryNozPriceRequest message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                QueryNozPriceRequest.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    return writer;
+                };
+
+                /**
+                 * Encodes the specified QueryNozPriceRequest message, length delimited. Does not implicitly {@link stratos.sds.v1.QueryNozPriceRequest.verify|verify} messages.
+                 * @function encodeDelimited
+                 * @memberof stratos.sds.v1.QueryNozPriceRequest
+                 * @static
+                 * @param {stratos.sds.v1.IQueryNozPriceRequest} message QueryNozPriceRequest message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                QueryNozPriceRequest.encodeDelimited = function encodeDelimited(message, writer) {
+                    return this.encode(message, writer).ldelim();
+                };
+
+                /**
+                 * Decodes a QueryNozPriceRequest message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof stratos.sds.v1.QueryNozPriceRequest
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {stratos.sds.v1.QueryNozPriceRequest} QueryNozPriceRequest
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                QueryNozPriceRequest.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.stratos.sds.v1.QueryNozPriceRequest();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+
+                /**
+                 * Decodes a QueryNozPriceRequest message from the specified reader or buffer, length delimited.
+                 * @function decodeDelimited
+                 * @memberof stratos.sds.v1.QueryNozPriceRequest
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @returns {stratos.sds.v1.QueryNozPriceRequest} QueryNozPriceRequest
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                QueryNozPriceRequest.decodeDelimited = function decodeDelimited(reader) {
+                    if (!(reader instanceof $Reader))
+                        reader = new $Reader(reader);
+                    return this.decode(reader, reader.uint32());
+                };
+
+                /**
+                 * Verifies a QueryNozPriceRequest message.
+                 * @function verify
+                 * @memberof stratos.sds.v1.QueryNozPriceRequest
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                QueryNozPriceRequest.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    return null;
+                };
+
+                /**
+                 * Creates a QueryNozPriceRequest message from a plain object. Also converts values to their respective internal types.
+                 * @function fromObject
+                 * @memberof stratos.sds.v1.QueryNozPriceRequest
+                 * @static
+                 * @param {Object.<string,*>} object Plain object
+                 * @returns {stratos.sds.v1.QueryNozPriceRequest} QueryNozPriceRequest
+                 */
+                QueryNozPriceRequest.fromObject = function fromObject(object) {
+                    if (object instanceof $root.stratos.sds.v1.QueryNozPriceRequest)
+                        return object;
+                    return new $root.stratos.sds.v1.QueryNozPriceRequest();
+                };
+
+                /**
+                 * Creates a plain object from a QueryNozPriceRequest message. Also converts values to other types if specified.
+                 * @function toObject
+                 * @memberof stratos.sds.v1.QueryNozPriceRequest
+                 * @static
+                 * @param {stratos.sds.v1.QueryNozPriceRequest} message QueryNozPriceRequest
+                 * @param {$protobuf.IConversionOptions} [options] Conversion options
+                 * @returns {Object.<string,*>} Plain object
+                 */
+                QueryNozPriceRequest.toObject = function toObject() {
+                    return {};
+                };
+
+                /**
+                 * Converts this QueryNozPriceRequest to JSON.
+                 * @function toJSON
+                 * @memberof stratos.sds.v1.QueryNozPriceRequest
+                 * @instance
+                 * @returns {Object.<string,*>} JSON object
+                 */
+                QueryNozPriceRequest.prototype.toJSON = function toJSON() {
+                    return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                };
+
+                return QueryNozPriceRequest;
+            })();
+
+            v1.QueryNozPriceResponse = (function() {
+
+                /**
+                 * Properties of a QueryNozPriceResponse.
+                 * @memberof stratos.sds.v1
+                 * @interface IQueryNozPriceResponse
+                 * @property {string|null} [price] QueryNozPriceResponse price
+                 */
+
+                /**
+                 * Constructs a new QueryNozPriceResponse.
+                 * @memberof stratos.sds.v1
+                 * @classdesc Represents a QueryNozPriceResponse.
+                 * @implements IQueryNozPriceResponse
+                 * @constructor
+                 * @param {stratos.sds.v1.IQueryNozPriceResponse=} [properties] Properties to set
+                 */
+                function QueryNozPriceResponse(properties) {
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+
+                /**
+                 * QueryNozPriceResponse price.
+                 * @member {string} price
+                 * @memberof stratos.sds.v1.QueryNozPriceResponse
+                 * @instance
+                 */
+                QueryNozPriceResponse.prototype.price = "";
+
+                /**
+                 * Creates a new QueryNozPriceResponse instance using the specified properties.
+                 * @function create
+                 * @memberof stratos.sds.v1.QueryNozPriceResponse
+                 * @static
+                 * @param {stratos.sds.v1.IQueryNozPriceResponse=} [properties] Properties to set
+                 * @returns {stratos.sds.v1.QueryNozPriceResponse} QueryNozPriceResponse instance
+                 */
+                QueryNozPriceResponse.create = function create(properties) {
+                    return new QueryNozPriceResponse(properties);
+                };
+
+                /**
+                 * Encodes the specified QueryNozPriceResponse message. Does not implicitly {@link stratos.sds.v1.QueryNozPriceResponse.verify|verify} messages.
+                 * @function encode
+                 * @memberof stratos.sds.v1.QueryNozPriceResponse
+                 * @static
+                 * @param {stratos.sds.v1.IQueryNozPriceResponse} message QueryNozPriceResponse message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                QueryNozPriceResponse.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.price != null && Object.hasOwnProperty.call(message, "price"))
+                        writer.uint32(/* id 1, wireType 2 =*/10).string(message.price);
+                    return writer;
+                };
+
+                /**
+                 * Encodes the specified QueryNozPriceResponse message, length delimited. Does not implicitly {@link stratos.sds.v1.QueryNozPriceResponse.verify|verify} messages.
+                 * @function encodeDelimited
+                 * @memberof stratos.sds.v1.QueryNozPriceResponse
+                 * @static
+                 * @param {stratos.sds.v1.IQueryNozPriceResponse} message QueryNozPriceResponse message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                QueryNozPriceResponse.encodeDelimited = function encodeDelimited(message, writer) {
+                    return this.encode(message, writer).ldelim();
+                };
+
+                /**
+                 * Decodes a QueryNozPriceResponse message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof stratos.sds.v1.QueryNozPriceResponse
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {stratos.sds.v1.QueryNozPriceResponse} QueryNozPriceResponse
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                QueryNozPriceResponse.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.stratos.sds.v1.QueryNozPriceResponse();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 1:
+                            message.price = reader.string();
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+
+                /**
+                 * Decodes a QueryNozPriceResponse message from the specified reader or buffer, length delimited.
+                 * @function decodeDelimited
+                 * @memberof stratos.sds.v1.QueryNozPriceResponse
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @returns {stratos.sds.v1.QueryNozPriceResponse} QueryNozPriceResponse
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                QueryNozPriceResponse.decodeDelimited = function decodeDelimited(reader) {
+                    if (!(reader instanceof $Reader))
+                        reader = new $Reader(reader);
+                    return this.decode(reader, reader.uint32());
+                };
+
+                /**
+                 * Verifies a QueryNozPriceResponse message.
+                 * @function verify
+                 * @memberof stratos.sds.v1.QueryNozPriceResponse
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                QueryNozPriceResponse.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    if (message.price != null && message.hasOwnProperty("price"))
+                        if (!$util.isString(message.price))
+                            return "price: string expected";
+                    return null;
+                };
+
+                /**
+                 * Creates a QueryNozPriceResponse message from a plain object. Also converts values to their respective internal types.
+                 * @function fromObject
+                 * @memberof stratos.sds.v1.QueryNozPriceResponse
+                 * @static
+                 * @param {Object.<string,*>} object Plain object
+                 * @returns {stratos.sds.v1.QueryNozPriceResponse} QueryNozPriceResponse
+                 */
+                QueryNozPriceResponse.fromObject = function fromObject(object) {
+                    if (object instanceof $root.stratos.sds.v1.QueryNozPriceResponse)
+                        return object;
+                    var message = new $root.stratos.sds.v1.QueryNozPriceResponse();
+                    if (object.price != null)
+                        message.price = String(object.price);
+                    return message;
+                };
+
+                /**
+                 * Creates a plain object from a QueryNozPriceResponse message. Also converts values to other types if specified.
+                 * @function toObject
+                 * @memberof stratos.sds.v1.QueryNozPriceResponse
+                 * @static
+                 * @param {stratos.sds.v1.QueryNozPriceResponse} message QueryNozPriceResponse
+                 * @param {$protobuf.IConversionOptions} [options] Conversion options
+                 * @returns {Object.<string,*>} Plain object
+                 */
+                QueryNozPriceResponse.toObject = function toObject(message, options) {
+                    if (!options)
+                        options = {};
+                    var object = {};
+                    if (options.defaults)
+                        object.price = "";
+                    if (message.price != null && message.hasOwnProperty("price"))
+                        object.price = message.price;
+                    return object;
+                };
+
+                /**
+                 * Converts this QueryNozPriceResponse to JSON.
+                 * @function toJSON
+                 * @memberof stratos.sds.v1.QueryNozPriceResponse
+                 * @instance
+                 * @returns {Object.<string,*>} JSON object
+                 */
+                QueryNozPriceResponse.prototype.toJSON = function toJSON() {
+                    return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                };
+
+                return QueryNozPriceResponse;
+            })();
+
+            v1.QueryNozSupplyRequest = (function() {
+
+                /**
+                 * Properties of a QueryNozSupplyRequest.
+                 * @memberof stratos.sds.v1
+                 * @interface IQueryNozSupplyRequest
+                 */
+
+                /**
+                 * Constructs a new QueryNozSupplyRequest.
+                 * @memberof stratos.sds.v1
+                 * @classdesc Represents a QueryNozSupplyRequest.
+                 * @implements IQueryNozSupplyRequest
+                 * @constructor
+                 * @param {stratos.sds.v1.IQueryNozSupplyRequest=} [properties] Properties to set
+                 */
+                function QueryNozSupplyRequest(properties) {
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+
+                /**
+                 * Creates a new QueryNozSupplyRequest instance using the specified properties.
+                 * @function create
+                 * @memberof stratos.sds.v1.QueryNozSupplyRequest
+                 * @static
+                 * @param {stratos.sds.v1.IQueryNozSupplyRequest=} [properties] Properties to set
+                 * @returns {stratos.sds.v1.QueryNozSupplyRequest} QueryNozSupplyRequest instance
+                 */
+                QueryNozSupplyRequest.create = function create(properties) {
+                    return new QueryNozSupplyRequest(properties);
+                };
+
+                /**
+                 * Encodes the specified QueryNozSupplyRequest message. Does not implicitly {@link stratos.sds.v1.QueryNozSupplyRequest.verify|verify} messages.
+                 * @function encode
+                 * @memberof stratos.sds.v1.QueryNozSupplyRequest
+                 * @static
+                 * @param {stratos.sds.v1.IQueryNozSupplyRequest} message QueryNozSupplyRequest message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                QueryNozSupplyRequest.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    return writer;
+                };
+
+                /**
+                 * Encodes the specified QueryNozSupplyRequest message, length delimited. Does not implicitly {@link stratos.sds.v1.QueryNozSupplyRequest.verify|verify} messages.
+                 * @function encodeDelimited
+                 * @memberof stratos.sds.v1.QueryNozSupplyRequest
+                 * @static
+                 * @param {stratos.sds.v1.IQueryNozSupplyRequest} message QueryNozSupplyRequest message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                QueryNozSupplyRequest.encodeDelimited = function encodeDelimited(message, writer) {
+                    return this.encode(message, writer).ldelim();
+                };
+
+                /**
+                 * Decodes a QueryNozSupplyRequest message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof stratos.sds.v1.QueryNozSupplyRequest
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {stratos.sds.v1.QueryNozSupplyRequest} QueryNozSupplyRequest
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                QueryNozSupplyRequest.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.stratos.sds.v1.QueryNozSupplyRequest();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+
+                /**
+                 * Decodes a QueryNozSupplyRequest message from the specified reader or buffer, length delimited.
+                 * @function decodeDelimited
+                 * @memberof stratos.sds.v1.QueryNozSupplyRequest
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @returns {stratos.sds.v1.QueryNozSupplyRequest} QueryNozSupplyRequest
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                QueryNozSupplyRequest.decodeDelimited = function decodeDelimited(reader) {
+                    if (!(reader instanceof $Reader))
+                        reader = new $Reader(reader);
+                    return this.decode(reader, reader.uint32());
+                };
+
+                /**
+                 * Verifies a QueryNozSupplyRequest message.
+                 * @function verify
+                 * @memberof stratos.sds.v1.QueryNozSupplyRequest
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                QueryNozSupplyRequest.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    return null;
+                };
+
+                /**
+                 * Creates a QueryNozSupplyRequest message from a plain object. Also converts values to their respective internal types.
+                 * @function fromObject
+                 * @memberof stratos.sds.v1.QueryNozSupplyRequest
+                 * @static
+                 * @param {Object.<string,*>} object Plain object
+                 * @returns {stratos.sds.v1.QueryNozSupplyRequest} QueryNozSupplyRequest
+                 */
+                QueryNozSupplyRequest.fromObject = function fromObject(object) {
+                    if (object instanceof $root.stratos.sds.v1.QueryNozSupplyRequest)
+                        return object;
+                    return new $root.stratos.sds.v1.QueryNozSupplyRequest();
+                };
+
+                /**
+                 * Creates a plain object from a QueryNozSupplyRequest message. Also converts values to other types if specified.
+                 * @function toObject
+                 * @memberof stratos.sds.v1.QueryNozSupplyRequest
+                 * @static
+                 * @param {stratos.sds.v1.QueryNozSupplyRequest} message QueryNozSupplyRequest
+                 * @param {$protobuf.IConversionOptions} [options] Conversion options
+                 * @returns {Object.<string,*>} Plain object
+                 */
+                QueryNozSupplyRequest.toObject = function toObject() {
+                    return {};
+                };
+
+                /**
+                 * Converts this QueryNozSupplyRequest to JSON.
+                 * @function toJSON
+                 * @memberof stratos.sds.v1.QueryNozSupplyRequest
+                 * @instance
+                 * @returns {Object.<string,*>} JSON object
+                 */
+                QueryNozSupplyRequest.prototype.toJSON = function toJSON() {
+                    return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                };
+
+                return QueryNozSupplyRequest;
+            })();
+
+            v1.QueryNozSupplyResponse = (function() {
+
+                /**
+                 * Properties of a QueryNozSupplyResponse.
+                 * @memberof stratos.sds.v1
+                 * @interface IQueryNozSupplyResponse
+                 * @property {string|null} [remaining] QueryNozSupplyResponse remaining
+                 * @property {string|null} [total] QueryNozSupplyResponse total
+                 */
+
+                /**
+                 * Constructs a new QueryNozSupplyResponse.
+                 * @memberof stratos.sds.v1
+                 * @classdesc Represents a QueryNozSupplyResponse.
+                 * @implements IQueryNozSupplyResponse
+                 * @constructor
+                 * @param {stratos.sds.v1.IQueryNozSupplyResponse=} [properties] Properties to set
+                 */
+                function QueryNozSupplyResponse(properties) {
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+
+                /**
+                 * QueryNozSupplyResponse remaining.
+                 * @member {string} remaining
+                 * @memberof stratos.sds.v1.QueryNozSupplyResponse
+                 * @instance
+                 */
+                QueryNozSupplyResponse.prototype.remaining = "";
+
+                /**
+                 * QueryNozSupplyResponse total.
+                 * @member {string} total
+                 * @memberof stratos.sds.v1.QueryNozSupplyResponse
+                 * @instance
+                 */
+                QueryNozSupplyResponse.prototype.total = "";
+
+                /**
+                 * Creates a new QueryNozSupplyResponse instance using the specified properties.
+                 * @function create
+                 * @memberof stratos.sds.v1.QueryNozSupplyResponse
+                 * @static
+                 * @param {stratos.sds.v1.IQueryNozSupplyResponse=} [properties] Properties to set
+                 * @returns {stratos.sds.v1.QueryNozSupplyResponse} QueryNozSupplyResponse instance
+                 */
+                QueryNozSupplyResponse.create = function create(properties) {
+                    return new QueryNozSupplyResponse(properties);
+                };
+
+                /**
+                 * Encodes the specified QueryNozSupplyResponse message. Does not implicitly {@link stratos.sds.v1.QueryNozSupplyResponse.verify|verify} messages.
+                 * @function encode
+                 * @memberof stratos.sds.v1.QueryNozSupplyResponse
+                 * @static
+                 * @param {stratos.sds.v1.IQueryNozSupplyResponse} message QueryNozSupplyResponse message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                QueryNozSupplyResponse.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.remaining != null && Object.hasOwnProperty.call(message, "remaining"))
+                        writer.uint32(/* id 1, wireType 2 =*/10).string(message.remaining);
+                    if (message.total != null && Object.hasOwnProperty.call(message, "total"))
+                        writer.uint32(/* id 2, wireType 2 =*/18).string(message.total);
+                    return writer;
+                };
+
+                /**
+                 * Encodes the specified QueryNozSupplyResponse message, length delimited. Does not implicitly {@link stratos.sds.v1.QueryNozSupplyResponse.verify|verify} messages.
+                 * @function encodeDelimited
+                 * @memberof stratos.sds.v1.QueryNozSupplyResponse
+                 * @static
+                 * @param {stratos.sds.v1.IQueryNozSupplyResponse} message QueryNozSupplyResponse message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                QueryNozSupplyResponse.encodeDelimited = function encodeDelimited(message, writer) {
+                    return this.encode(message, writer).ldelim();
+                };
+
+                /**
+                 * Decodes a QueryNozSupplyResponse message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof stratos.sds.v1.QueryNozSupplyResponse
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {stratos.sds.v1.QueryNozSupplyResponse} QueryNozSupplyResponse
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                QueryNozSupplyResponse.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.stratos.sds.v1.QueryNozSupplyResponse();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 1:
+                            message.remaining = reader.string();
+                            break;
+                        case 2:
+                            message.total = reader.string();
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+
+                /**
+                 * Decodes a QueryNozSupplyResponse message from the specified reader or buffer, length delimited.
+                 * @function decodeDelimited
+                 * @memberof stratos.sds.v1.QueryNozSupplyResponse
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @returns {stratos.sds.v1.QueryNozSupplyResponse} QueryNozSupplyResponse
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                QueryNozSupplyResponse.decodeDelimited = function decodeDelimited(reader) {
+                    if (!(reader instanceof $Reader))
+                        reader = new $Reader(reader);
+                    return this.decode(reader, reader.uint32());
+                };
+
+                /**
+                 * Verifies a QueryNozSupplyResponse message.
+                 * @function verify
+                 * @memberof stratos.sds.v1.QueryNozSupplyResponse
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                QueryNozSupplyResponse.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    if (message.remaining != null && message.hasOwnProperty("remaining"))
+                        if (!$util.isString(message.remaining))
+                            return "remaining: string expected";
+                    if (message.total != null && message.hasOwnProperty("total"))
+                        if (!$util.isString(message.total))
+                            return "total: string expected";
+                    return null;
+                };
+
+                /**
+                 * Creates a QueryNozSupplyResponse message from a plain object. Also converts values to their respective internal types.
+                 * @function fromObject
+                 * @memberof stratos.sds.v1.QueryNozSupplyResponse
+                 * @static
+                 * @param {Object.<string,*>} object Plain object
+                 * @returns {stratos.sds.v1.QueryNozSupplyResponse} QueryNozSupplyResponse
+                 */
+                QueryNozSupplyResponse.fromObject = function fromObject(object) {
+                    if (object instanceof $root.stratos.sds.v1.QueryNozSupplyResponse)
+                        return object;
+                    var message = new $root.stratos.sds.v1.QueryNozSupplyResponse();
+                    if (object.remaining != null)
+                        message.remaining = String(object.remaining);
+                    if (object.total != null)
+                        message.total = String(object.total);
+                    return message;
+                };
+
+                /**
+                 * Creates a plain object from a QueryNozSupplyResponse message. Also converts values to other types if specified.
+                 * @function toObject
+                 * @memberof stratos.sds.v1.QueryNozSupplyResponse
+                 * @static
+                 * @param {stratos.sds.v1.QueryNozSupplyResponse} message QueryNozSupplyResponse
+                 * @param {$protobuf.IConversionOptions} [options] Conversion options
+                 * @returns {Object.<string,*>} Plain object
+                 */
+                QueryNozSupplyResponse.toObject = function toObject(message, options) {
+                    if (!options)
+                        options = {};
+                    var object = {};
+                    if (options.defaults) {
+                        object.remaining = "";
+                        object.total = "";
+                    }
+                    if (message.remaining != null && message.hasOwnProperty("remaining"))
+                        object.remaining = message.remaining;
+                    if (message.total != null && message.hasOwnProperty("total"))
+                        object.total = message.total;
+                    return object;
+                };
+
+                /**
+                 * Converts this QueryNozSupplyResponse to JSON.
+                 * @function toJSON
+                 * @memberof stratos.sds.v1.QueryNozSupplyResponse
+                 * @instance
+                 * @returns {Object.<string,*>} JSON object
+                 */
+                QueryNozSupplyResponse.prototype.toJSON = function toJSON() {
+                    return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                };
+
+                return QueryNozSupplyResponse;
+            })();
+
+            v1.QueryParamsRequest = (function() {
+
+                /**
+                 * Properties of a QueryParamsRequest.
+                 * @memberof stratos.sds.v1
+                 * @interface IQueryParamsRequest
+                 */
+
+                /**
+                 * Constructs a new QueryParamsRequest.
+                 * @memberof stratos.sds.v1
+                 * @classdesc Represents a QueryParamsRequest.
+                 * @implements IQueryParamsRequest
+                 * @constructor
+                 * @param {stratos.sds.v1.IQueryParamsRequest=} [properties] Properties to set
+                 */
+                function QueryParamsRequest(properties) {
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+
+                /**
+                 * Creates a new QueryParamsRequest instance using the specified properties.
+                 * @function create
+                 * @memberof stratos.sds.v1.QueryParamsRequest
+                 * @static
+                 * @param {stratos.sds.v1.IQueryParamsRequest=} [properties] Properties to set
+                 * @returns {stratos.sds.v1.QueryParamsRequest} QueryParamsRequest instance
+                 */
+                QueryParamsRequest.create = function create(properties) {
+                    return new QueryParamsRequest(properties);
+                };
+
+                /**
+                 * Encodes the specified QueryParamsRequest message. Does not implicitly {@link stratos.sds.v1.QueryParamsRequest.verify|verify} messages.
+                 * @function encode
+                 * @memberof stratos.sds.v1.QueryParamsRequest
+                 * @static
+                 * @param {stratos.sds.v1.IQueryParamsRequest} message QueryParamsRequest message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                QueryParamsRequest.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    return writer;
+                };
+
+                /**
+                 * Encodes the specified QueryParamsRequest message, length delimited. Does not implicitly {@link stratos.sds.v1.QueryParamsRequest.verify|verify} messages.
+                 * @function encodeDelimited
+                 * @memberof stratos.sds.v1.QueryParamsRequest
+                 * @static
+                 * @param {stratos.sds.v1.IQueryParamsRequest} message QueryParamsRequest message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                QueryParamsRequest.encodeDelimited = function encodeDelimited(message, writer) {
+                    return this.encode(message, writer).ldelim();
+                };
+
+                /**
+                 * Decodes a QueryParamsRequest message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof stratos.sds.v1.QueryParamsRequest
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {stratos.sds.v1.QueryParamsRequest} QueryParamsRequest
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                QueryParamsRequest.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.stratos.sds.v1.QueryParamsRequest();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+
+                /**
+                 * Decodes a QueryParamsRequest message from the specified reader or buffer, length delimited.
+                 * @function decodeDelimited
+                 * @memberof stratos.sds.v1.QueryParamsRequest
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @returns {stratos.sds.v1.QueryParamsRequest} QueryParamsRequest
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                QueryParamsRequest.decodeDelimited = function decodeDelimited(reader) {
+                    if (!(reader instanceof $Reader))
+                        reader = new $Reader(reader);
+                    return this.decode(reader, reader.uint32());
+                };
+
+                /**
+                 * Verifies a QueryParamsRequest message.
+                 * @function verify
+                 * @memberof stratos.sds.v1.QueryParamsRequest
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                QueryParamsRequest.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    return null;
+                };
+
+                /**
+                 * Creates a QueryParamsRequest message from a plain object. Also converts values to their respective internal types.
+                 * @function fromObject
+                 * @memberof stratos.sds.v1.QueryParamsRequest
+                 * @static
+                 * @param {Object.<string,*>} object Plain object
+                 * @returns {stratos.sds.v1.QueryParamsRequest} QueryParamsRequest
+                 */
+                QueryParamsRequest.fromObject = function fromObject(object) {
+                    if (object instanceof $root.stratos.sds.v1.QueryParamsRequest)
+                        return object;
+                    return new $root.stratos.sds.v1.QueryParamsRequest();
+                };
+
+                /**
+                 * Creates a plain object from a QueryParamsRequest message. Also converts values to other types if specified.
+                 * @function toObject
+                 * @memberof stratos.sds.v1.QueryParamsRequest
+                 * @static
+                 * @param {stratos.sds.v1.QueryParamsRequest} message QueryParamsRequest
+                 * @param {$protobuf.IConversionOptions} [options] Conversion options
+                 * @returns {Object.<string,*>} Plain object
+                 */
+                QueryParamsRequest.toObject = function toObject() {
+                    return {};
+                };
+
+                /**
+                 * Converts this QueryParamsRequest to JSON.
+                 * @function toJSON
+                 * @memberof stratos.sds.v1.QueryParamsRequest
+                 * @instance
+                 * @returns {Object.<string,*>} JSON object
+                 */
+                QueryParamsRequest.prototype.toJSON = function toJSON() {
+                    return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                };
+
+                return QueryParamsRequest;
+            })();
+
+            v1.QueryParamsResponse = (function() {
+
+                /**
+                 * Properties of a QueryParamsResponse.
+                 * @memberof stratos.sds.v1
+                 * @interface IQueryParamsResponse
+                 * @property {stratos.sds.v1.IParams|null} [params] QueryParamsResponse params
+                 */
+
+                /**
+                 * Constructs a new QueryParamsResponse.
+                 * @memberof stratos.sds.v1
+                 * @classdesc Represents a QueryParamsResponse.
+                 * @implements IQueryParamsResponse
+                 * @constructor
+                 * @param {stratos.sds.v1.IQueryParamsResponse=} [properties] Properties to set
+                 */
+                function QueryParamsResponse(properties) {
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+
+                /**
+                 * QueryParamsResponse params.
+                 * @member {stratos.sds.v1.IParams|null|undefined} params
+                 * @memberof stratos.sds.v1.QueryParamsResponse
+                 * @instance
+                 */
+                QueryParamsResponse.prototype.params = null;
+
+                /**
+                 * Creates a new QueryParamsResponse instance using the specified properties.
+                 * @function create
+                 * @memberof stratos.sds.v1.QueryParamsResponse
+                 * @static
+                 * @param {stratos.sds.v1.IQueryParamsResponse=} [properties] Properties to set
+                 * @returns {stratos.sds.v1.QueryParamsResponse} QueryParamsResponse instance
+                 */
+                QueryParamsResponse.create = function create(properties) {
+                    return new QueryParamsResponse(properties);
+                };
+
+                /**
+                 * Encodes the specified QueryParamsResponse message. Does not implicitly {@link stratos.sds.v1.QueryParamsResponse.verify|verify} messages.
+                 * @function encode
+                 * @memberof stratos.sds.v1.QueryParamsResponse
+                 * @static
+                 * @param {stratos.sds.v1.IQueryParamsResponse} message QueryParamsResponse message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                QueryParamsResponse.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.params != null && Object.hasOwnProperty.call(message, "params"))
+                        $root.stratos.sds.v1.Params.encode(message.params, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                    return writer;
+                };
+
+                /**
+                 * Encodes the specified QueryParamsResponse message, length delimited. Does not implicitly {@link stratos.sds.v1.QueryParamsResponse.verify|verify} messages.
+                 * @function encodeDelimited
+                 * @memberof stratos.sds.v1.QueryParamsResponse
+                 * @static
+                 * @param {stratos.sds.v1.IQueryParamsResponse} message QueryParamsResponse message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                QueryParamsResponse.encodeDelimited = function encodeDelimited(message, writer) {
+                    return this.encode(message, writer).ldelim();
+                };
+
+                /**
+                 * Decodes a QueryParamsResponse message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof stratos.sds.v1.QueryParamsResponse
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {stratos.sds.v1.QueryParamsResponse} QueryParamsResponse
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                QueryParamsResponse.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.stratos.sds.v1.QueryParamsResponse();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 1:
+                            message.params = $root.stratos.sds.v1.Params.decode(reader, reader.uint32());
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+
+                /**
+                 * Decodes a QueryParamsResponse message from the specified reader or buffer, length delimited.
+                 * @function decodeDelimited
+                 * @memberof stratos.sds.v1.QueryParamsResponse
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @returns {stratos.sds.v1.QueryParamsResponse} QueryParamsResponse
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                QueryParamsResponse.decodeDelimited = function decodeDelimited(reader) {
+                    if (!(reader instanceof $Reader))
+                        reader = new $Reader(reader);
+                    return this.decode(reader, reader.uint32());
+                };
+
+                /**
+                 * Verifies a QueryParamsResponse message.
+                 * @function verify
+                 * @memberof stratos.sds.v1.QueryParamsResponse
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                QueryParamsResponse.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    if (message.params != null && message.hasOwnProperty("params")) {
+                        var error = $root.stratos.sds.v1.Params.verify(message.params);
+                        if (error)
+                            return "params." + error;
+                    }
+                    return null;
+                };
+
+                /**
+                 * Creates a QueryParamsResponse message from a plain object. Also converts values to their respective internal types.
+                 * @function fromObject
+                 * @memberof stratos.sds.v1.QueryParamsResponse
+                 * @static
+                 * @param {Object.<string,*>} object Plain object
+                 * @returns {stratos.sds.v1.QueryParamsResponse} QueryParamsResponse
+                 */
+                QueryParamsResponse.fromObject = function fromObject(object) {
+                    if (object instanceof $root.stratos.sds.v1.QueryParamsResponse)
+                        return object;
+                    var message = new $root.stratos.sds.v1.QueryParamsResponse();
+                    if (object.params != null) {
+                        if (typeof object.params !== "object")
+                            throw TypeError(".stratos.sds.v1.QueryParamsResponse.params: object expected");
+                        message.params = $root.stratos.sds.v1.Params.fromObject(object.params);
+                    }
+                    return message;
+                };
+
+                /**
+                 * Creates a plain object from a QueryParamsResponse message. Also converts values to other types if specified.
+                 * @function toObject
+                 * @memberof stratos.sds.v1.QueryParamsResponse
+                 * @static
+                 * @param {stratos.sds.v1.QueryParamsResponse} message QueryParamsResponse
+                 * @param {$protobuf.IConversionOptions} [options] Conversion options
+                 * @returns {Object.<string,*>} Plain object
+                 */
+                QueryParamsResponse.toObject = function toObject(message, options) {
+                    if (!options)
+                        options = {};
+                    var object = {};
+                    if (options.defaults)
+                        object.params = null;
+                    if (message.params != null && message.hasOwnProperty("params"))
+                        object.params = $root.stratos.sds.v1.Params.toObject(message.params, options);
+                    return object;
+                };
+
+                /**
+                 * Converts this QueryParamsResponse to JSON.
+                 * @function toJSON
+                 * @memberof stratos.sds.v1.QueryParamsResponse
+                 * @instance
+                 * @returns {Object.<string,*>} JSON object
+                 */
+                QueryParamsResponse.prototype.toJSON = function toJSON() {
+                    return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                };
+
+                return QueryParamsResponse;
+            })();
+
             v1.Msg = (function() {
 
                 /**
@@ -1840,6 +3883,39 @@ $root.stratos = (function() {
                  * @instance
                  * @param {stratos.sds.v1.IMsgPrepay} request MsgPrepay message or plain object
                  * @returns {Promise<stratos.sds.v1.MsgPrepayResponse>} Promise
+                 * @variation 2
+                 */
+
+                /**
+                 * Callback as used by {@link stratos.sds.v1.Msg#updateParams}.
+                 * @memberof stratos.sds.v1.Msg
+                 * @typedef UpdateParamsCallback
+                 * @type {function}
+                 * @param {Error|null} error Error, if any
+                 * @param {stratos.sds.v1.MsgUpdateParamsResponse} [response] MsgUpdateParamsResponse
+                 */
+
+                /**
+                 * Calls UpdateParams.
+                 * @function updateParams
+                 * @memberof stratos.sds.v1.Msg
+                 * @instance
+                 * @param {stratos.sds.v1.IMsgUpdateParams} request MsgUpdateParams message or plain object
+                 * @param {stratos.sds.v1.Msg.UpdateParamsCallback} callback Node-style callback called with the error, if any, and MsgUpdateParamsResponse
+                 * @returns {undefined}
+                 * @variation 1
+                 */
+                Object.defineProperty(Msg.prototype.updateParams = function updateParams(request, callback) {
+                    return this.rpcCall(updateParams, $root.stratos.sds.v1.MsgUpdateParams, $root.stratos.sds.v1.MsgUpdateParamsResponse, request, callback);
+                }, "name", { value: "UpdateParams" });
+
+                /**
+                 * Calls UpdateParams.
+                 * @function updateParams
+                 * @memberof stratos.sds.v1.Msg
+                 * @instance
+                 * @param {stratos.sds.v1.IMsgUpdateParams} request MsgUpdateParams message or plain object
+                 * @returns {Promise<stratos.sds.v1.MsgUpdateParamsResponse>} Promise
                  * @variation 2
                  */
 
@@ -2672,6 +4748,1121 @@ $root.stratos = (function() {
                 };
 
                 return MsgPrepayResponse;
+            })();
+
+            v1.MsgUpdateParams = (function() {
+
+                /**
+                 * Properties of a MsgUpdateParams.
+                 * @memberof stratos.sds.v1
+                 * @interface IMsgUpdateParams
+                 * @property {string|null} [authority] MsgUpdateParams authority
+                 * @property {stratos.sds.v1.IParams|null} [params] MsgUpdateParams params
+                 */
+
+                /**
+                 * Constructs a new MsgUpdateParams.
+                 * @memberof stratos.sds.v1
+                 * @classdesc Represents a MsgUpdateParams.
+                 * @implements IMsgUpdateParams
+                 * @constructor
+                 * @param {stratos.sds.v1.IMsgUpdateParams=} [properties] Properties to set
+                 */
+                function MsgUpdateParams(properties) {
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+
+                /**
+                 * MsgUpdateParams authority.
+                 * @member {string} authority
+                 * @memberof stratos.sds.v1.MsgUpdateParams
+                 * @instance
+                 */
+                MsgUpdateParams.prototype.authority = "";
+
+                /**
+                 * MsgUpdateParams params.
+                 * @member {stratos.sds.v1.IParams|null|undefined} params
+                 * @memberof stratos.sds.v1.MsgUpdateParams
+                 * @instance
+                 */
+                MsgUpdateParams.prototype.params = null;
+
+                /**
+                 * Creates a new MsgUpdateParams instance using the specified properties.
+                 * @function create
+                 * @memberof stratos.sds.v1.MsgUpdateParams
+                 * @static
+                 * @param {stratos.sds.v1.IMsgUpdateParams=} [properties] Properties to set
+                 * @returns {stratos.sds.v1.MsgUpdateParams} MsgUpdateParams instance
+                 */
+                MsgUpdateParams.create = function create(properties) {
+                    return new MsgUpdateParams(properties);
+                };
+
+                /**
+                 * Encodes the specified MsgUpdateParams message. Does not implicitly {@link stratos.sds.v1.MsgUpdateParams.verify|verify} messages.
+                 * @function encode
+                 * @memberof stratos.sds.v1.MsgUpdateParams
+                 * @static
+                 * @param {stratos.sds.v1.IMsgUpdateParams} message MsgUpdateParams message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                MsgUpdateParams.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.authority != null && Object.hasOwnProperty.call(message, "authority"))
+                        writer.uint32(/* id 1, wireType 2 =*/10).string(message.authority);
+                    if (message.params != null && Object.hasOwnProperty.call(message, "params"))
+                        $root.stratos.sds.v1.Params.encode(message.params, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                    return writer;
+                };
+
+                /**
+                 * Encodes the specified MsgUpdateParams message, length delimited. Does not implicitly {@link stratos.sds.v1.MsgUpdateParams.verify|verify} messages.
+                 * @function encodeDelimited
+                 * @memberof stratos.sds.v1.MsgUpdateParams
+                 * @static
+                 * @param {stratos.sds.v1.IMsgUpdateParams} message MsgUpdateParams message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                MsgUpdateParams.encodeDelimited = function encodeDelimited(message, writer) {
+                    return this.encode(message, writer).ldelim();
+                };
+
+                /**
+                 * Decodes a MsgUpdateParams message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof stratos.sds.v1.MsgUpdateParams
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {stratos.sds.v1.MsgUpdateParams} MsgUpdateParams
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                MsgUpdateParams.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.stratos.sds.v1.MsgUpdateParams();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 1:
+                            message.authority = reader.string();
+                            break;
+                        case 2:
+                            message.params = $root.stratos.sds.v1.Params.decode(reader, reader.uint32());
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+
+                /**
+                 * Decodes a MsgUpdateParams message from the specified reader or buffer, length delimited.
+                 * @function decodeDelimited
+                 * @memberof stratos.sds.v1.MsgUpdateParams
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @returns {stratos.sds.v1.MsgUpdateParams} MsgUpdateParams
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                MsgUpdateParams.decodeDelimited = function decodeDelimited(reader) {
+                    if (!(reader instanceof $Reader))
+                        reader = new $Reader(reader);
+                    return this.decode(reader, reader.uint32());
+                };
+
+                /**
+                 * Verifies a MsgUpdateParams message.
+                 * @function verify
+                 * @memberof stratos.sds.v1.MsgUpdateParams
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                MsgUpdateParams.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    if (message.authority != null && message.hasOwnProperty("authority"))
+                        if (!$util.isString(message.authority))
+                            return "authority: string expected";
+                    if (message.params != null && message.hasOwnProperty("params")) {
+                        var error = $root.stratos.sds.v1.Params.verify(message.params);
+                        if (error)
+                            return "params." + error;
+                    }
+                    return null;
+                };
+
+                /**
+                 * Creates a MsgUpdateParams message from a plain object. Also converts values to their respective internal types.
+                 * @function fromObject
+                 * @memberof stratos.sds.v1.MsgUpdateParams
+                 * @static
+                 * @param {Object.<string,*>} object Plain object
+                 * @returns {stratos.sds.v1.MsgUpdateParams} MsgUpdateParams
+                 */
+                MsgUpdateParams.fromObject = function fromObject(object) {
+                    if (object instanceof $root.stratos.sds.v1.MsgUpdateParams)
+                        return object;
+                    var message = new $root.stratos.sds.v1.MsgUpdateParams();
+                    if (object.authority != null)
+                        message.authority = String(object.authority);
+                    if (object.params != null) {
+                        if (typeof object.params !== "object")
+                            throw TypeError(".stratos.sds.v1.MsgUpdateParams.params: object expected");
+                        message.params = $root.stratos.sds.v1.Params.fromObject(object.params);
+                    }
+                    return message;
+                };
+
+                /**
+                 * Creates a plain object from a MsgUpdateParams message. Also converts values to other types if specified.
+                 * @function toObject
+                 * @memberof stratos.sds.v1.MsgUpdateParams
+                 * @static
+                 * @param {stratos.sds.v1.MsgUpdateParams} message MsgUpdateParams
+                 * @param {$protobuf.IConversionOptions} [options] Conversion options
+                 * @returns {Object.<string,*>} Plain object
+                 */
+                MsgUpdateParams.toObject = function toObject(message, options) {
+                    if (!options)
+                        options = {};
+                    var object = {};
+                    if (options.defaults) {
+                        object.authority = "";
+                        object.params = null;
+                    }
+                    if (message.authority != null && message.hasOwnProperty("authority"))
+                        object.authority = message.authority;
+                    if (message.params != null && message.hasOwnProperty("params"))
+                        object.params = $root.stratos.sds.v1.Params.toObject(message.params, options);
+                    return object;
+                };
+
+                /**
+                 * Converts this MsgUpdateParams to JSON.
+                 * @function toJSON
+                 * @memberof stratos.sds.v1.MsgUpdateParams
+                 * @instance
+                 * @returns {Object.<string,*>} JSON object
+                 */
+                MsgUpdateParams.prototype.toJSON = function toJSON() {
+                    return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                };
+
+                return MsgUpdateParams;
+            })();
+
+            v1.MsgUpdateParamsResponse = (function() {
+
+                /**
+                 * Properties of a MsgUpdateParamsResponse.
+                 * @memberof stratos.sds.v1
+                 * @interface IMsgUpdateParamsResponse
+                 */
+
+                /**
+                 * Constructs a new MsgUpdateParamsResponse.
+                 * @memberof stratos.sds.v1
+                 * @classdesc Represents a MsgUpdateParamsResponse.
+                 * @implements IMsgUpdateParamsResponse
+                 * @constructor
+                 * @param {stratos.sds.v1.IMsgUpdateParamsResponse=} [properties] Properties to set
+                 */
+                function MsgUpdateParamsResponse(properties) {
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+
+                /**
+                 * Creates a new MsgUpdateParamsResponse instance using the specified properties.
+                 * @function create
+                 * @memberof stratos.sds.v1.MsgUpdateParamsResponse
+                 * @static
+                 * @param {stratos.sds.v1.IMsgUpdateParamsResponse=} [properties] Properties to set
+                 * @returns {stratos.sds.v1.MsgUpdateParamsResponse} MsgUpdateParamsResponse instance
+                 */
+                MsgUpdateParamsResponse.create = function create(properties) {
+                    return new MsgUpdateParamsResponse(properties);
+                };
+
+                /**
+                 * Encodes the specified MsgUpdateParamsResponse message. Does not implicitly {@link stratos.sds.v1.MsgUpdateParamsResponse.verify|verify} messages.
+                 * @function encode
+                 * @memberof stratos.sds.v1.MsgUpdateParamsResponse
+                 * @static
+                 * @param {stratos.sds.v1.IMsgUpdateParamsResponse} message MsgUpdateParamsResponse message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                MsgUpdateParamsResponse.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    return writer;
+                };
+
+                /**
+                 * Encodes the specified MsgUpdateParamsResponse message, length delimited. Does not implicitly {@link stratos.sds.v1.MsgUpdateParamsResponse.verify|verify} messages.
+                 * @function encodeDelimited
+                 * @memberof stratos.sds.v1.MsgUpdateParamsResponse
+                 * @static
+                 * @param {stratos.sds.v1.IMsgUpdateParamsResponse} message MsgUpdateParamsResponse message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                MsgUpdateParamsResponse.encodeDelimited = function encodeDelimited(message, writer) {
+                    return this.encode(message, writer).ldelim();
+                };
+
+                /**
+                 * Decodes a MsgUpdateParamsResponse message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof stratos.sds.v1.MsgUpdateParamsResponse
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {stratos.sds.v1.MsgUpdateParamsResponse} MsgUpdateParamsResponse
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                MsgUpdateParamsResponse.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.stratos.sds.v1.MsgUpdateParamsResponse();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+
+                /**
+                 * Decodes a MsgUpdateParamsResponse message from the specified reader or buffer, length delimited.
+                 * @function decodeDelimited
+                 * @memberof stratos.sds.v1.MsgUpdateParamsResponse
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @returns {stratos.sds.v1.MsgUpdateParamsResponse} MsgUpdateParamsResponse
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                MsgUpdateParamsResponse.decodeDelimited = function decodeDelimited(reader) {
+                    if (!(reader instanceof $Reader))
+                        reader = new $Reader(reader);
+                    return this.decode(reader, reader.uint32());
+                };
+
+                /**
+                 * Verifies a MsgUpdateParamsResponse message.
+                 * @function verify
+                 * @memberof stratos.sds.v1.MsgUpdateParamsResponse
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                MsgUpdateParamsResponse.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    return null;
+                };
+
+                /**
+                 * Creates a MsgUpdateParamsResponse message from a plain object. Also converts values to their respective internal types.
+                 * @function fromObject
+                 * @memberof stratos.sds.v1.MsgUpdateParamsResponse
+                 * @static
+                 * @param {Object.<string,*>} object Plain object
+                 * @returns {stratos.sds.v1.MsgUpdateParamsResponse} MsgUpdateParamsResponse
+                 */
+                MsgUpdateParamsResponse.fromObject = function fromObject(object) {
+                    if (object instanceof $root.stratos.sds.v1.MsgUpdateParamsResponse)
+                        return object;
+                    return new $root.stratos.sds.v1.MsgUpdateParamsResponse();
+                };
+
+                /**
+                 * Creates a plain object from a MsgUpdateParamsResponse message. Also converts values to other types if specified.
+                 * @function toObject
+                 * @memberof stratos.sds.v1.MsgUpdateParamsResponse
+                 * @static
+                 * @param {stratos.sds.v1.MsgUpdateParamsResponse} message MsgUpdateParamsResponse
+                 * @param {$protobuf.IConversionOptions} [options] Conversion options
+                 * @returns {Object.<string,*>} Plain object
+                 */
+                MsgUpdateParamsResponse.toObject = function toObject() {
+                    return {};
+                };
+
+                /**
+                 * Converts this MsgUpdateParamsResponse to JSON.
+                 * @function toJSON
+                 * @memberof stratos.sds.v1.MsgUpdateParamsResponse
+                 * @instance
+                 * @returns {Object.<string,*>} JSON object
+                 */
+                MsgUpdateParamsResponse.prototype.toJSON = function toJSON() {
+                    return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                };
+
+                return MsgUpdateParamsResponse;
+            })();
+
+            v1.EventPrePay = (function() {
+
+                /**
+                 * Properties of an EventPrePay.
+                 * @memberof stratos.sds.v1
+                 * @interface IEventPrePay
+                 * @property {string|null} [sender] EventPrePay sender
+                 * @property {string|null} [beneficiary] EventPrePay beneficiary
+                 * @property {string|null} [amount] EventPrePay amount
+                 * @property {string|null} [purchasedNoz] EventPrePay purchasedNoz
+                 */
+
+                /**
+                 * Constructs a new EventPrePay.
+                 * @memberof stratos.sds.v1
+                 * @classdesc Represents an EventPrePay.
+                 * @implements IEventPrePay
+                 * @constructor
+                 * @param {stratos.sds.v1.IEventPrePay=} [properties] Properties to set
+                 */
+                function EventPrePay(properties) {
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+
+                /**
+                 * EventPrePay sender.
+                 * @member {string} sender
+                 * @memberof stratos.sds.v1.EventPrePay
+                 * @instance
+                 */
+                EventPrePay.prototype.sender = "";
+
+                /**
+                 * EventPrePay beneficiary.
+                 * @member {string} beneficiary
+                 * @memberof stratos.sds.v1.EventPrePay
+                 * @instance
+                 */
+                EventPrePay.prototype.beneficiary = "";
+
+                /**
+                 * EventPrePay amount.
+                 * @member {string} amount
+                 * @memberof stratos.sds.v1.EventPrePay
+                 * @instance
+                 */
+                EventPrePay.prototype.amount = "";
+
+                /**
+                 * EventPrePay purchasedNoz.
+                 * @member {string} purchasedNoz
+                 * @memberof stratos.sds.v1.EventPrePay
+                 * @instance
+                 */
+                EventPrePay.prototype.purchasedNoz = "";
+
+                /**
+                 * Creates a new EventPrePay instance using the specified properties.
+                 * @function create
+                 * @memberof stratos.sds.v1.EventPrePay
+                 * @static
+                 * @param {stratos.sds.v1.IEventPrePay=} [properties] Properties to set
+                 * @returns {stratos.sds.v1.EventPrePay} EventPrePay instance
+                 */
+                EventPrePay.create = function create(properties) {
+                    return new EventPrePay(properties);
+                };
+
+                /**
+                 * Encodes the specified EventPrePay message. Does not implicitly {@link stratos.sds.v1.EventPrePay.verify|verify} messages.
+                 * @function encode
+                 * @memberof stratos.sds.v1.EventPrePay
+                 * @static
+                 * @param {stratos.sds.v1.IEventPrePay} message EventPrePay message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                EventPrePay.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.sender != null && Object.hasOwnProperty.call(message, "sender"))
+                        writer.uint32(/* id 1, wireType 2 =*/10).string(message.sender);
+                    if (message.beneficiary != null && Object.hasOwnProperty.call(message, "beneficiary"))
+                        writer.uint32(/* id 2, wireType 2 =*/18).string(message.beneficiary);
+                    if (message.amount != null && Object.hasOwnProperty.call(message, "amount"))
+                        writer.uint32(/* id 3, wireType 2 =*/26).string(message.amount);
+                    if (message.purchasedNoz != null && Object.hasOwnProperty.call(message, "purchasedNoz"))
+                        writer.uint32(/* id 4, wireType 2 =*/34).string(message.purchasedNoz);
+                    return writer;
+                };
+
+                /**
+                 * Encodes the specified EventPrePay message, length delimited. Does not implicitly {@link stratos.sds.v1.EventPrePay.verify|verify} messages.
+                 * @function encodeDelimited
+                 * @memberof stratos.sds.v1.EventPrePay
+                 * @static
+                 * @param {stratos.sds.v1.IEventPrePay} message EventPrePay message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                EventPrePay.encodeDelimited = function encodeDelimited(message, writer) {
+                    return this.encode(message, writer).ldelim();
+                };
+
+                /**
+                 * Decodes an EventPrePay message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof stratos.sds.v1.EventPrePay
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {stratos.sds.v1.EventPrePay} EventPrePay
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                EventPrePay.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.stratos.sds.v1.EventPrePay();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 1:
+                            message.sender = reader.string();
+                            break;
+                        case 2:
+                            message.beneficiary = reader.string();
+                            break;
+                        case 3:
+                            message.amount = reader.string();
+                            break;
+                        case 4:
+                            message.purchasedNoz = reader.string();
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+
+                /**
+                 * Decodes an EventPrePay message from the specified reader or buffer, length delimited.
+                 * @function decodeDelimited
+                 * @memberof stratos.sds.v1.EventPrePay
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @returns {stratos.sds.v1.EventPrePay} EventPrePay
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                EventPrePay.decodeDelimited = function decodeDelimited(reader) {
+                    if (!(reader instanceof $Reader))
+                        reader = new $Reader(reader);
+                    return this.decode(reader, reader.uint32());
+                };
+
+                /**
+                 * Verifies an EventPrePay message.
+                 * @function verify
+                 * @memberof stratos.sds.v1.EventPrePay
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                EventPrePay.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    if (message.sender != null && message.hasOwnProperty("sender"))
+                        if (!$util.isString(message.sender))
+                            return "sender: string expected";
+                    if (message.beneficiary != null && message.hasOwnProperty("beneficiary"))
+                        if (!$util.isString(message.beneficiary))
+                            return "beneficiary: string expected";
+                    if (message.amount != null && message.hasOwnProperty("amount"))
+                        if (!$util.isString(message.amount))
+                            return "amount: string expected";
+                    if (message.purchasedNoz != null && message.hasOwnProperty("purchasedNoz"))
+                        if (!$util.isString(message.purchasedNoz))
+                            return "purchasedNoz: string expected";
+                    return null;
+                };
+
+                /**
+                 * Creates an EventPrePay message from a plain object. Also converts values to their respective internal types.
+                 * @function fromObject
+                 * @memberof stratos.sds.v1.EventPrePay
+                 * @static
+                 * @param {Object.<string,*>} object Plain object
+                 * @returns {stratos.sds.v1.EventPrePay} EventPrePay
+                 */
+                EventPrePay.fromObject = function fromObject(object) {
+                    if (object instanceof $root.stratos.sds.v1.EventPrePay)
+                        return object;
+                    var message = new $root.stratos.sds.v1.EventPrePay();
+                    if (object.sender != null)
+                        message.sender = String(object.sender);
+                    if (object.beneficiary != null)
+                        message.beneficiary = String(object.beneficiary);
+                    if (object.amount != null)
+                        message.amount = String(object.amount);
+                    if (object.purchasedNoz != null)
+                        message.purchasedNoz = String(object.purchasedNoz);
+                    return message;
+                };
+
+                /**
+                 * Creates a plain object from an EventPrePay message. Also converts values to other types if specified.
+                 * @function toObject
+                 * @memberof stratos.sds.v1.EventPrePay
+                 * @static
+                 * @param {stratos.sds.v1.EventPrePay} message EventPrePay
+                 * @param {$protobuf.IConversionOptions} [options] Conversion options
+                 * @returns {Object.<string,*>} Plain object
+                 */
+                EventPrePay.toObject = function toObject(message, options) {
+                    if (!options)
+                        options = {};
+                    var object = {};
+                    if (options.defaults) {
+                        object.sender = "";
+                        object.beneficiary = "";
+                        object.amount = "";
+                        object.purchasedNoz = "";
+                    }
+                    if (message.sender != null && message.hasOwnProperty("sender"))
+                        object.sender = message.sender;
+                    if (message.beneficiary != null && message.hasOwnProperty("beneficiary"))
+                        object.beneficiary = message.beneficiary;
+                    if (message.amount != null && message.hasOwnProperty("amount"))
+                        object.amount = message.amount;
+                    if (message.purchasedNoz != null && message.hasOwnProperty("purchasedNoz"))
+                        object.purchasedNoz = message.purchasedNoz;
+                    return object;
+                };
+
+                /**
+                 * Converts this EventPrePay to JSON.
+                 * @function toJSON
+                 * @memberof stratos.sds.v1.EventPrePay
+                 * @instance
+                 * @returns {Object.<string,*>} JSON object
+                 */
+                EventPrePay.prototype.toJSON = function toJSON() {
+                    return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                };
+
+                return EventPrePay;
+            })();
+
+            v1.EventFileUpload = (function() {
+
+                /**
+                 * Properties of an EventFileUpload.
+                 * @memberof stratos.sds.v1
+                 * @interface IEventFileUpload
+                 * @property {string|null} [sender] EventFileUpload sender
+                 * @property {string|null} [reporter] EventFileUpload reporter
+                 * @property {string|null} [uploader] EventFileUpload uploader
+                 * @property {string|null} [fileHash] EventFileUpload fileHash
+                 */
+
+                /**
+                 * Constructs a new EventFileUpload.
+                 * @memberof stratos.sds.v1
+                 * @classdesc Represents an EventFileUpload.
+                 * @implements IEventFileUpload
+                 * @constructor
+                 * @param {stratos.sds.v1.IEventFileUpload=} [properties] Properties to set
+                 */
+                function EventFileUpload(properties) {
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+
+                /**
+                 * EventFileUpload sender.
+                 * @member {string} sender
+                 * @memberof stratos.sds.v1.EventFileUpload
+                 * @instance
+                 */
+                EventFileUpload.prototype.sender = "";
+
+                /**
+                 * EventFileUpload reporter.
+                 * @member {string} reporter
+                 * @memberof stratos.sds.v1.EventFileUpload
+                 * @instance
+                 */
+                EventFileUpload.prototype.reporter = "";
+
+                /**
+                 * EventFileUpload uploader.
+                 * @member {string} uploader
+                 * @memberof stratos.sds.v1.EventFileUpload
+                 * @instance
+                 */
+                EventFileUpload.prototype.uploader = "";
+
+                /**
+                 * EventFileUpload fileHash.
+                 * @member {string} fileHash
+                 * @memberof stratos.sds.v1.EventFileUpload
+                 * @instance
+                 */
+                EventFileUpload.prototype.fileHash = "";
+
+                /**
+                 * Creates a new EventFileUpload instance using the specified properties.
+                 * @function create
+                 * @memberof stratos.sds.v1.EventFileUpload
+                 * @static
+                 * @param {stratos.sds.v1.IEventFileUpload=} [properties] Properties to set
+                 * @returns {stratos.sds.v1.EventFileUpload} EventFileUpload instance
+                 */
+                EventFileUpload.create = function create(properties) {
+                    return new EventFileUpload(properties);
+                };
+
+                /**
+                 * Encodes the specified EventFileUpload message. Does not implicitly {@link stratos.sds.v1.EventFileUpload.verify|verify} messages.
+                 * @function encode
+                 * @memberof stratos.sds.v1.EventFileUpload
+                 * @static
+                 * @param {stratos.sds.v1.IEventFileUpload} message EventFileUpload message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                EventFileUpload.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.sender != null && Object.hasOwnProperty.call(message, "sender"))
+                        writer.uint32(/* id 1, wireType 2 =*/10).string(message.sender);
+                    if (message.reporter != null && Object.hasOwnProperty.call(message, "reporter"))
+                        writer.uint32(/* id 2, wireType 2 =*/18).string(message.reporter);
+                    if (message.uploader != null && Object.hasOwnProperty.call(message, "uploader"))
+                        writer.uint32(/* id 3, wireType 2 =*/26).string(message.uploader);
+                    if (message.fileHash != null && Object.hasOwnProperty.call(message, "fileHash"))
+                        writer.uint32(/* id 4, wireType 2 =*/34).string(message.fileHash);
+                    return writer;
+                };
+
+                /**
+                 * Encodes the specified EventFileUpload message, length delimited. Does not implicitly {@link stratos.sds.v1.EventFileUpload.verify|verify} messages.
+                 * @function encodeDelimited
+                 * @memberof stratos.sds.v1.EventFileUpload
+                 * @static
+                 * @param {stratos.sds.v1.IEventFileUpload} message EventFileUpload message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                EventFileUpload.encodeDelimited = function encodeDelimited(message, writer) {
+                    return this.encode(message, writer).ldelim();
+                };
+
+                /**
+                 * Decodes an EventFileUpload message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof stratos.sds.v1.EventFileUpload
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {stratos.sds.v1.EventFileUpload} EventFileUpload
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                EventFileUpload.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.stratos.sds.v1.EventFileUpload();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 1:
+                            message.sender = reader.string();
+                            break;
+                        case 2:
+                            message.reporter = reader.string();
+                            break;
+                        case 3:
+                            message.uploader = reader.string();
+                            break;
+                        case 4:
+                            message.fileHash = reader.string();
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+
+                /**
+                 * Decodes an EventFileUpload message from the specified reader or buffer, length delimited.
+                 * @function decodeDelimited
+                 * @memberof stratos.sds.v1.EventFileUpload
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @returns {stratos.sds.v1.EventFileUpload} EventFileUpload
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                EventFileUpload.decodeDelimited = function decodeDelimited(reader) {
+                    if (!(reader instanceof $Reader))
+                        reader = new $Reader(reader);
+                    return this.decode(reader, reader.uint32());
+                };
+
+                /**
+                 * Verifies an EventFileUpload message.
+                 * @function verify
+                 * @memberof stratos.sds.v1.EventFileUpload
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                EventFileUpload.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    if (message.sender != null && message.hasOwnProperty("sender"))
+                        if (!$util.isString(message.sender))
+                            return "sender: string expected";
+                    if (message.reporter != null && message.hasOwnProperty("reporter"))
+                        if (!$util.isString(message.reporter))
+                            return "reporter: string expected";
+                    if (message.uploader != null && message.hasOwnProperty("uploader"))
+                        if (!$util.isString(message.uploader))
+                            return "uploader: string expected";
+                    if (message.fileHash != null && message.hasOwnProperty("fileHash"))
+                        if (!$util.isString(message.fileHash))
+                            return "fileHash: string expected";
+                    return null;
+                };
+
+                /**
+                 * Creates an EventFileUpload message from a plain object. Also converts values to their respective internal types.
+                 * @function fromObject
+                 * @memberof stratos.sds.v1.EventFileUpload
+                 * @static
+                 * @param {Object.<string,*>} object Plain object
+                 * @returns {stratos.sds.v1.EventFileUpload} EventFileUpload
+                 */
+                EventFileUpload.fromObject = function fromObject(object) {
+                    if (object instanceof $root.stratos.sds.v1.EventFileUpload)
+                        return object;
+                    var message = new $root.stratos.sds.v1.EventFileUpload();
+                    if (object.sender != null)
+                        message.sender = String(object.sender);
+                    if (object.reporter != null)
+                        message.reporter = String(object.reporter);
+                    if (object.uploader != null)
+                        message.uploader = String(object.uploader);
+                    if (object.fileHash != null)
+                        message.fileHash = String(object.fileHash);
+                    return message;
+                };
+
+                /**
+                 * Creates a plain object from an EventFileUpload message. Also converts values to other types if specified.
+                 * @function toObject
+                 * @memberof stratos.sds.v1.EventFileUpload
+                 * @static
+                 * @param {stratos.sds.v1.EventFileUpload} message EventFileUpload
+                 * @param {$protobuf.IConversionOptions} [options] Conversion options
+                 * @returns {Object.<string,*>} Plain object
+                 */
+                EventFileUpload.toObject = function toObject(message, options) {
+                    if (!options)
+                        options = {};
+                    var object = {};
+                    if (options.defaults) {
+                        object.sender = "";
+                        object.reporter = "";
+                        object.uploader = "";
+                        object.fileHash = "";
+                    }
+                    if (message.sender != null && message.hasOwnProperty("sender"))
+                        object.sender = message.sender;
+                    if (message.reporter != null && message.hasOwnProperty("reporter"))
+                        object.reporter = message.reporter;
+                    if (message.uploader != null && message.hasOwnProperty("uploader"))
+                        object.uploader = message.uploader;
+                    if (message.fileHash != null && message.hasOwnProperty("fileHash"))
+                        object.fileHash = message.fileHash;
+                    return object;
+                };
+
+                /**
+                 * Converts this EventFileUpload to JSON.
+                 * @function toJSON
+                 * @memberof stratos.sds.v1.EventFileUpload
+                 * @instance
+                 * @returns {Object.<string,*>} JSON object
+                 */
+                EventFileUpload.prototype.toJSON = function toJSON() {
+                    return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                };
+
+                return EventFileUpload;
+            })();
+
+            v1.EventMessage = (function() {
+
+                /**
+                 * Properties of an EventMessage.
+                 * @memberof stratos.sds.v1
+                 * @interface IEventMessage
+                 * @property {string|null} [module] EventMessage module
+                 * @property {string|null} [sender] EventMessage sender
+                 * @property {string|null} [action] EventMessage action
+                 */
+
+                /**
+                 * Constructs a new EventMessage.
+                 * @memberof stratos.sds.v1
+                 * @classdesc Represents an EventMessage.
+                 * @implements IEventMessage
+                 * @constructor
+                 * @param {stratos.sds.v1.IEventMessage=} [properties] Properties to set
+                 */
+                function EventMessage(properties) {
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+
+                /**
+                 * EventMessage module.
+                 * @member {string} module
+                 * @memberof stratos.sds.v1.EventMessage
+                 * @instance
+                 */
+                EventMessage.prototype.module = "";
+
+                /**
+                 * EventMessage sender.
+                 * @member {string} sender
+                 * @memberof stratos.sds.v1.EventMessage
+                 * @instance
+                 */
+                EventMessage.prototype.sender = "";
+
+                /**
+                 * EventMessage action.
+                 * @member {string} action
+                 * @memberof stratos.sds.v1.EventMessage
+                 * @instance
+                 */
+                EventMessage.prototype.action = "";
+
+                /**
+                 * Creates a new EventMessage instance using the specified properties.
+                 * @function create
+                 * @memberof stratos.sds.v1.EventMessage
+                 * @static
+                 * @param {stratos.sds.v1.IEventMessage=} [properties] Properties to set
+                 * @returns {stratos.sds.v1.EventMessage} EventMessage instance
+                 */
+                EventMessage.create = function create(properties) {
+                    return new EventMessage(properties);
+                };
+
+                /**
+                 * Encodes the specified EventMessage message. Does not implicitly {@link stratos.sds.v1.EventMessage.verify|verify} messages.
+                 * @function encode
+                 * @memberof stratos.sds.v1.EventMessage
+                 * @static
+                 * @param {stratos.sds.v1.IEventMessage} message EventMessage message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                EventMessage.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.module != null && Object.hasOwnProperty.call(message, "module"))
+                        writer.uint32(/* id 1, wireType 2 =*/10).string(message.module);
+                    if (message.sender != null && Object.hasOwnProperty.call(message, "sender"))
+                        writer.uint32(/* id 2, wireType 2 =*/18).string(message.sender);
+                    if (message.action != null && Object.hasOwnProperty.call(message, "action"))
+                        writer.uint32(/* id 3, wireType 2 =*/26).string(message.action);
+                    return writer;
+                };
+
+                /**
+                 * Encodes the specified EventMessage message, length delimited. Does not implicitly {@link stratos.sds.v1.EventMessage.verify|verify} messages.
+                 * @function encodeDelimited
+                 * @memberof stratos.sds.v1.EventMessage
+                 * @static
+                 * @param {stratos.sds.v1.IEventMessage} message EventMessage message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                EventMessage.encodeDelimited = function encodeDelimited(message, writer) {
+                    return this.encode(message, writer).ldelim();
+                };
+
+                /**
+                 * Decodes an EventMessage message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof stratos.sds.v1.EventMessage
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {stratos.sds.v1.EventMessage} EventMessage
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                EventMessage.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.stratos.sds.v1.EventMessage();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 1:
+                            message.module = reader.string();
+                            break;
+                        case 2:
+                            message.sender = reader.string();
+                            break;
+                        case 3:
+                            message.action = reader.string();
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+
+                /**
+                 * Decodes an EventMessage message from the specified reader or buffer, length delimited.
+                 * @function decodeDelimited
+                 * @memberof stratos.sds.v1.EventMessage
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @returns {stratos.sds.v1.EventMessage} EventMessage
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                EventMessage.decodeDelimited = function decodeDelimited(reader) {
+                    if (!(reader instanceof $Reader))
+                        reader = new $Reader(reader);
+                    return this.decode(reader, reader.uint32());
+                };
+
+                /**
+                 * Verifies an EventMessage message.
+                 * @function verify
+                 * @memberof stratos.sds.v1.EventMessage
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                EventMessage.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    if (message.module != null && message.hasOwnProperty("module"))
+                        if (!$util.isString(message.module))
+                            return "module: string expected";
+                    if (message.sender != null && message.hasOwnProperty("sender"))
+                        if (!$util.isString(message.sender))
+                            return "sender: string expected";
+                    if (message.action != null && message.hasOwnProperty("action"))
+                        if (!$util.isString(message.action))
+                            return "action: string expected";
+                    return null;
+                };
+
+                /**
+                 * Creates an EventMessage message from a plain object. Also converts values to their respective internal types.
+                 * @function fromObject
+                 * @memberof stratos.sds.v1.EventMessage
+                 * @static
+                 * @param {Object.<string,*>} object Plain object
+                 * @returns {stratos.sds.v1.EventMessage} EventMessage
+                 */
+                EventMessage.fromObject = function fromObject(object) {
+                    if (object instanceof $root.stratos.sds.v1.EventMessage)
+                        return object;
+                    var message = new $root.stratos.sds.v1.EventMessage();
+                    if (object.module != null)
+                        message.module = String(object.module);
+                    if (object.sender != null)
+                        message.sender = String(object.sender);
+                    if (object.action != null)
+                        message.action = String(object.action);
+                    return message;
+                };
+
+                /**
+                 * Creates a plain object from an EventMessage message. Also converts values to other types if specified.
+                 * @function toObject
+                 * @memberof stratos.sds.v1.EventMessage
+                 * @static
+                 * @param {stratos.sds.v1.EventMessage} message EventMessage
+                 * @param {$protobuf.IConversionOptions} [options] Conversion options
+                 * @returns {Object.<string,*>} Plain object
+                 */
+                EventMessage.toObject = function toObject(message, options) {
+                    if (!options)
+                        options = {};
+                    var object = {};
+                    if (options.defaults) {
+                        object.module = "";
+                        object.sender = "";
+                        object.action = "";
+                    }
+                    if (message.module != null && message.hasOwnProperty("module"))
+                        object.module = message.module;
+                    if (message.sender != null && message.hasOwnProperty("sender"))
+                        object.sender = message.sender;
+                    if (message.action != null && message.hasOwnProperty("action"))
+                        object.action = message.action;
+                    return object;
+                };
+
+                /**
+                 * Converts this EventMessage to JSON.
+                 * @function toJSON
+                 * @memberof stratos.sds.v1.EventMessage
+                 * @instance
+                 * @returns {Object.<string,*>} JSON object
+                 */
+                EventMessage.prototype.toJSON = function toJSON() {
+                    return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                };
+
+                return EventMessage;
             })();
 
             return v1;

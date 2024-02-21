@@ -1,6 +1,6 @@
 {
   "name": "@stratos-network/stratos-cosmosjs-types",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "author": "Stratos Network",
   "description": "",
   "scripts": {
@@ -12,7 +12,7 @@
     "lint": "eslint src --ext .js,.jsx,.ts,.tsx",
     "proto:build:o": "proto:build:files",
     "proto:build": "yarn proto:build:files; yarn proto:build:dist",
-    "proto:build:files": "cd ./src/proto/stratos/sds/v1/; pbjs -t static-module  -w commonjs -o sdsBundle.js coin.proto sds.proto genesis.proto query.js tx.proto ../../crypto/v1/ethsecp256k1/keys.proto ; pbts -o sdsBundle.d.ts sdsBundle.js; cd ../../../../",
+    "proto:build:files": "cd ./src/proto/stratos/sds/v1/; pbjs -t static-module  -w commonjs -o sdsBundle.js coin.proto sds.proto genesis.proto query.proto tx.proto event.proto ../../crypto/v1/ethsecp256k1/keys.proto ; pbts -o sdsBundle.d.ts sdsBundle.js; cd ../../../../",
     "proto:build:dist": " cp ./src/proto/stratos/sds/v1/sdsBundle*.* ./dist/; rm -rf ./src/proto/stratos/sds/v1/sdsBundle*.*",
     "sync:proto": "cp -Rv ../stratos-chain/proto/stratos/ ./src/proto/stratos "
   },
@@ -59,13 +59,6 @@
     "typescript": "^4.1.5"
   },
   "dependencies": {
-    "@cosmjs/crypto": "0.28.9",
-    "@cosmjs/encoding": "0.28.9",
-    "@cosmjs/proto-signing": "0.28.9",
-    "@cosmjs/stargate": "0.28.9",
-    "axios": "^0.21.1",
-    "axios-retry": "^3.1.9",
-    "cosmjs-types": "^0.5.0",
     "dotenv": "^10.0.0",
     "google-proto-files": "^3.0.0",
     "lodash": "^4.17.21",

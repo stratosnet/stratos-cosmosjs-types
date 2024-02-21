@@ -43,6 +43,14 @@ service Query {
   rpc CirculationSupply(QueryCirculationSupplyRequest) returns (QueryCirculationSupplyResponse) {
     option (google.api.http).get = "/stratos/pot/v1/circulation-supply";
   }
+
+  rpc TotalRewardByEpoch(QueryTotalRewardByEpochRequest) returns (QueryTotalRewardByEpochResponse) {
+    option (google.api.http).get = "/stratos/pot/v1/total-reward/{epoch}";
+  }
+
+  rpc Metrics(QueryMetricsRequest) returns (QueryMetricsResponse) {
+    option (google.api.http).get = "/stratos/pot/v1/metrics";
+  }
 }
 
 // QueryVolumeReportRequest is request type for the Query/VolumeReport RPC method
@@ -142,4 +150,26 @@ message QueryCirculationSupplyResponse{
   ];
 }
 
+message QueryTotalRewardByEpochRequest {
+  int64 epoch = 1;
+}
 
+message QueryTotalRewardByEpochResponse {
+  TotalReward total_reward = 1 [
+    (gogoproto.nullable) = false,
+    (gogoproto.jsontag) = "total_reward",
+    (gogoproto.moretags) = "yaml:\"total_reward\""
+  ];
+  bool        is_legacy = 2 [
+    (gogoproto.jsontag) = "is_legacy",
+    (gogoproto.moretags) = "yaml:\"is_legacy\""
+  ];
+}
+
+message QueryMetricsRequest {}
+
+message QueryMetricsResponse {
+  Metrics metrics = 1 [
+    (gogoproto.nullable) = false
+  ];
+}

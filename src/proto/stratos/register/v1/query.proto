@@ -55,6 +55,11 @@ service Query {
   rpc BondedMetaNodeCount(QueryBondedMetaNodeCountRequest) returns (QueryBondedMetaNodeCountResponse) {
     option (google.api.http).get = "/stratos/register/v1/sp_number";
   }
+
+  // RemainingOzoneLimit returns the current remaining ozone limit.
+  rpc RemainingOzoneLimit(QueryRemainingOzoneLimitRequest) returns (QueryRemainingOzoneLimitResponse) {
+    option (google.api.http).get = "/stratos/register/v1/remaining_ozone_limit";
+  }
 }
 
 // QueryResourceNodeRequest is request type for the Query/ResourceNode RPC method
@@ -149,6 +154,19 @@ message QueryBondedMetaNodeCountResponse {
   uint64 number = 1;
 }
 
+// QueryRemainingOzoneLimitRequest is request type for the Query/RemainingOzoneLimit RPC method.
+message QueryRemainingOzoneLimitRequest {}
+
+// QueryRemainingOzoneLimitResponse is response type for the Query/RemainingOzoneLimit RPC method.
+message QueryRemainingOzoneLimitResponse {
+  string ozone_limit = 1 [
+    (gogoproto.nullable) = false,
+    (gogoproto.jsontag) = "ozone_limit",
+    (gogoproto.moretags) = "yaml:\"ozone_limit\"",
+    (gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int"
+  ];
+}
+
 message DepositInfo {
   string                              network_address = 1 [
     (gogoproto.jsontag) = "network_address",
@@ -170,6 +188,7 @@ message DepositInfo {
     (gogoproto.nullable) = false,
     (gogoproto.jsontag) = "tokens",
     (gogoproto.moretags) = "yaml:\"tokens\"",
+    (cosmos_proto.scalar) = "cosmos.Int",
     (gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int"
   ];
   string                              owner_address = 6 [
